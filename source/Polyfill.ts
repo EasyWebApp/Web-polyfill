@@ -34,7 +34,7 @@ export abstract class Polyfill {
         '${pathname}${ext ? '' : '.js'}';
 
     if (isView)
-        document.write(packageURL);
+        document.write('<script src="' + packageURL + '"></script>');
     else
         self.importScripts(packageURL);
 })();`

@@ -26,14 +26,15 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 
 ## Add more polyfills
 
-1. Just [edit the Polyfill directory][7], and make a pull request
-2. After your pull request reviewd & merged, the polyfills will be updated by GitHub actions automatically
+1. For **junior engineers**, you can [submit an issue][7] and wait for the maintainer reaction
+2. For **senior engineers**, just [edit the Polyfill directory][8], and make a pull request
+3. After your pull request reviewd & merged, the polyfills will be updated by GitHub actions automatically
 
 ## Host your own mirror
 
 1. Fork this repository
-2. Replace original HTTP domain with yours in [GitHub action configuration][8]
-3. You can replace GitHub pages with an Object Storage service (AWS S3, etc.)
+2. Replace original HTTP domain with yours in [GitHub action configuration][9]
+3. You can replace [GitHub pages][10] with an **Object Storage service** (AWS S3, etc.)
 
 ## Inspired by
 
@@ -46,5 +47,7 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 [4]: https://nodejs.org/
 [5]: https://www.jsdelivr.com/
 [6]: https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml
-[7]: https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts
-[8]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
+[7]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.md&title=
+[8]: https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts
+[9]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
+[10]: https://pages.github.com/

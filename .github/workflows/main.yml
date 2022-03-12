@@ -19,7 +19,9 @@ jobs:
             - name: Generate files
               run: |
                   yarn generate
-                  mv ReadMe.md public/
+                  cat > public/index.html <<EOF
+                      <meta http-equiv="refresh" content="1;url=https://github.com/${{ github.repository }}">
+                  EOF
             - name: Update document
               uses: peaceiris/actions-gh-pages@v3
               with:
