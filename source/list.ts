@@ -11,8 +11,28 @@ export class URL extends Polyfill {
 export class Fetch extends Polyfill {
     packageName = 'whatwg-fetch';
 
+    dependencies = [new URL()];
+
     detect = function () {
         return window.fetch instanceof Function;
+    };
+}
+
+export class EventTarget extends Polyfill {
+    packageName = 'event-target-polyfill';
+
+    detect = function () {
+        return window.EventTarget instanceof Function;
+    };
+}
+
+export class AbortController extends Polyfill {
+    packageName = 'yet-another-abortcontroller-polyfill';
+
+    dependencies = [new EventTarget(), new Fetch()];
+
+    detect = function () {
+        return window.AbortController instanceof Function;
     };
 }
 
