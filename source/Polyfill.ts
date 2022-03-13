@@ -8,16 +8,21 @@ export abstract class Polyfill {
 
     abstract packageName: string;
 
-    get packageURL() {
-        return this.mirrorBase + this.packageName;
+    get packageURLs() {
+        return [this.mirrorBase + this.packageName];
     }
     abstract detect(): boolean;
 
-    saveDetector() {
-        const { name } = this.constructor;
-        const { packageURL, detect } = this;
+    clientPathOf(packageURL: string) {
         const { pathname } = new URL(packageURL);
         const { ext } = parse(pathname);
+
+        return `${pathname}${ext ? '' : '.js'}`;
+    }
+
+    saveDetector() {
+        const { name } = this.constructor;
+        const { packageURLs, detect } = this;
 
         return outputFile(
             `public/feature/${name}.js`,
@@ -30,41 +35,61 @@ export abstract class Polyfill {
     
     var currentURL = isView ? document.currentScript.src : (self.location + '');
 
-    var packageURL = currentURL.split('/').slice(0, 3).join('/') +
-        '${pathname}${ext ? '' : '.js'}';
+    var origin = currentURL.split('/').slice(0, 3).join('/');
 
-    if (isView)
-        document.write('<script src="' + packageURL + '"></script>');
-    else
-        self.importScripts(packageURL);
+    var paths = ${JSON.stringify(
+        packageURLs.map(packageURL => this.clientPathOf(packageURL)),
+        null,
+        4
+    )};
+    if (!isView)
+        return paths.forEach(function (path) {
+            self.importScripts(origin + path);
+        });
+
+    var tags = paths.map(function (path) {
+        const URL = origin + path;
+
+        return URL.match(/\\.css$/i)
+            ? '<link rel="stylesheet" href="' + URL + '">'
+            : '<script src="' + URL + '"></script>';
+    });
+    document.write(tags.join('\\n'));
 })();`
         );
     }
 
-    async saveSourceMap(sourceCode: string) {
+    async saveSourceMap(sourceURL: string, sourceCode: string) {
         const [_, mapPath] =
             sourceCode.match(/^\/\/# sourceMappingURL=(\S+)/m) || [];
 
         if (!mapPath) return;
 
-        const sourceURL = new URL(mapPath, this.mirrorBase) + '';
+        const { ext } = parse(sourceURL);
+        const mapURL =
+            new URL(
+                mapPath,
+                ext || sourceURL.endsWith('/') ? sourceURL : `${sourceURL}/`
+            ) + '';
 
-        await saveAs({ sourceURL, targetPath: 'public' });
-
+        await saveAs({
+            sourceURL: mapURL,
+            targetPath: 'public'
+        });
         console.log(`[save] ${sourceURL}`);
     }
 
     async save() {
-        const { packageURL } = this;
+        for (const sourceURL of this.packageURLs) {
+            const code = await saveAs({
+                sourceURL,
+                targetExtension: '.js',
+                targetPath: 'public'
+            });
+            console.log(`[save] ${sourceURL}`);
 
-        const code = await saveAs({
-            sourceURL: packageURL,
-            targetExtension: '.js',
-            targetPath: 'public'
-        });
-        console.log(`[save] ${packageURL}`);
-
-        await this.saveSourceMap(code);
+            await this.saveSourceMap(sourceURL, code);
+        }
         await this.saveDetector();
     }
 }
