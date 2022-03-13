@@ -1,5 +1,21 @@
 import { Polyfill } from './Polyfill';
 
+export class URL extends Polyfill {
+    packageName = 'url-polyfill';
+
+    detect = function () {
+        return window.URL instanceof Function;
+    };
+}
+
+export class Fetch extends Polyfill {
+    packageName = 'whatwg-fetch';
+
+    detect = function () {
+        return window.fetch instanceof Function;
+    };
+}
+
 export class Regenerator extends Polyfill {
     packageName = 'regenerator-runtime';
 
@@ -17,15 +33,29 @@ export class ResizeObserver extends Polyfill {
 }
 
 export class IntersectionObserver extends Polyfill {
-    packageName = 'intersection-observer-polyfill';
+    packageName = 'intersection-observer';
 
     get packageURLs() {
-        return [
-            'https://cdn.jsdelivr.net/npm/intersection-observer-polyfill/dist/IntersectionObserver.global.js'
-        ];
+        return [`${this.packageBase}/intersection-observer.js`];
     }
     detect = function () {
         return window.IntersectionObserver instanceof Function;
+    };
+}
+
+export class EventSubmitter extends Polyfill {
+    packageName = 'event-submitter-polyfill';
+
+    detect = function () {
+        return true;
+    };
+}
+
+export class ScrollBehavior extends Polyfill {
+    packageName = 'scroll-behavior-polyfill';
+
+    detect = function () {
+        return 'scrollBehavior' in document.documentElement.style;
     };
 }
 
@@ -33,9 +63,11 @@ export class Dialog extends Polyfill {
     packageName = 'dialog-polyfill';
 
     get packageURLs() {
+        const { packageBase } = this;
+
         return [
-            'https://cdn.jsdelivr.net/npm/dialog-polyfill/dist/dialog-polyfill.js',
-            'https://cdn.jsdelivr.net/npm/dialog-polyfill/dist/dialog-polyfill.css'
+            `${packageBase}/dist/dialog-polyfill.js`,
+            `${packageBase}/dist/dialog-polyfill.css`
         ];
     }
     detect = function () {
@@ -47,9 +79,11 @@ export class WebComponents extends Polyfill {
     packageName = '@webcomponents/webcomponentsjs';
 
     get packageURLs() {
+        const { packageBase } = this;
+
         return [
-            'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
-            'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.min.js'
+            `${packageBase}/custom-elements-es5-adapter.js`,
+            `${packageBase}/webcomponents-bundle.min.js`
         ];
     }
     detect = function () {
@@ -57,11 +91,32 @@ export class WebComponents extends Polyfill {
     };
 }
 
+export class ElementInternals extends Polyfill {
+    packageName = 'element-internals-polyfill';
+
+    detect = function () {
+        return window.ElementInternals instanceof Function;
+    };
+}
+
+export class Clipboard extends Polyfill {
+    packageName = 'clipboard-polyfill';
+
+    get packageURLs() {
+        return [
+            `${this.packageBase}/dist/overwrite-globals/clipboard-polyfill.overwrite-globals.js`
+        ];
+    }
+    detect = function () {
+        return !!window.Clipboard;
+    };
+}
+
 export class PWAManifest extends Polyfill {
     packageName = 'pwacompat';
 
     detect = function () {
-        return typeof navigator.serviceWorker !== 'undefined';
+        return !!navigator.serviceWorker;
     };
 }
 

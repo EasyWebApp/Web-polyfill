@@ -17,11 +17,7 @@ jobs:
             - name: Install packages
               run: yarn
             - name: Generate files
-              run: |
-                  yarn generate
-                  cat > public/index.html <<EOF
-                      <meta http-equiv="refresh" content="1;url=https://github.com/${{ github.repository }}">
-                  EOF
+              run: yarn generate
             - name: Update document
               uses: peaceiris/actions-gh-pages@v3
               with:

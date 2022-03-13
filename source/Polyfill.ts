@@ -8,8 +8,11 @@ export abstract class Polyfill {
 
     abstract packageName: string;
 
+    get packageBase() {
+        return this.mirrorBase + this.packageName;
+    }
     get packageURLs() {
-        return [this.mirrorBase + this.packageName];
+        return [this.packageBase];
     }
     abstract detect(): boolean;
 
