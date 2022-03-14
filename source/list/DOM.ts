@@ -1,48 +1,4 @@
-import { Polyfill } from './Polyfill';
-
-export class URL extends Polyfill {
-    packageName = 'url-polyfill';
-
-    detect = function () {
-        return window.URL instanceof Function;
-    };
-}
-
-export class Fetch extends Polyfill {
-    packageName = 'whatwg-fetch';
-
-    dependencies = [new URL()];
-
-    detect = function () {
-        return window.fetch instanceof Function;
-    };
-}
-
-export class EventTarget extends Polyfill {
-    packageName = 'event-target-polyfill';
-
-    detect = function () {
-        return window.EventTarget instanceof Function;
-    };
-}
-
-export class AbortController extends Polyfill {
-    packageName = 'yet-another-abortcontroller-polyfill';
-
-    dependencies = [new EventTarget(), new Fetch()];
-
-    detect = function () {
-        return window.AbortController instanceof Function;
-    };
-}
-
-export class Regenerator extends Polyfill {
-    packageName = 'regenerator-runtime';
-
-    detect = function () {
-        return 'regeneratorRuntime' in window;
-    };
-}
+import { Polyfill } from '../Polyfill';
 
 export class ResizeObserver extends Polyfill {
     packageName = 'resize-observer-polyfill';
@@ -116,34 +72,5 @@ export class ElementInternals extends Polyfill {
 
     detect = function () {
         return window.ElementInternals instanceof Function;
-    };
-}
-
-export class Clipboard extends Polyfill {
-    packageName = 'clipboard-polyfill';
-
-    get packageURLs() {
-        return [
-            `${this.packageBase}/dist/overwrite-globals/clipboard-polyfill.overwrite-globals.js`
-        ];
-    }
-    detect = function () {
-        return !!window.Clipboard;
-    };
-}
-
-export class PWAManifest extends Polyfill {
-    packageName = 'pwacompat';
-
-    detect = function () {
-        return !!navigator.serviceWorker;
-    };
-}
-
-export class Share extends Polyfill {
-    packageName = 'share-api-polyfill';
-
-    detect = function () {
-        return navigator.share instanceof Function;
     };
 }

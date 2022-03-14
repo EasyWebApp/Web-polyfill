@@ -22,7 +22,7 @@ export abstract class Polyfill {
             .map(({ allURLs }) => allURLs)
             .flat(Infinity) as string[];
 
-        return [...dependencyURLs, ...this.packageURLs];
+        return [...new Set([...dependencyURLs, ...this.packageURLs])];
     }
 
     abstract detect(): boolean;
@@ -102,7 +102,11 @@ export abstract class Polyfill {
             });
             console.log(`[save] ${sourceURL}`);
 
-            await this.saveSourceMap(sourceURL, code);
+            try {
+                await this.saveSourceMap(sourceURL, code);
+            } catch (error) {
+                console.error(error);
+            }
         }
         await this.saveDetector();
     }
