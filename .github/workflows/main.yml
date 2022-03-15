@@ -18,10 +18,17 @@ jobs:
               run: yarn
             - name: Generate files
               run: yarn generate
-            - name: Update document
+            - name: Deploy for Global
               uses: peaceiris/actions-gh-pages@v3
               with:
                   publish_dir: ./public
                   personal_token: ${{ secrets.GITHUB_TOKEN }}
                   force_orphan: true
                   cname: polyfill.web-cell.dev
+            - name: Deploy for China mainland
+              uses: bacongobbler/azure-blob-storage-upload@v2.0.0
+              with:
+                  source_dir: dist/
+                  container_name: $web
+                  connection_string: ${{ secrets.ConnectionString }}
+                  sync: 'true'

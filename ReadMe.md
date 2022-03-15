@@ -36,6 +36,12 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 2. Replace original HTTP domain with yours in [GitHub action configuration][10]
 3. You can replace [GitHub pages][11] with an **Object Storage service** (AWS S3, etc.)
 
+### China mainland
+
+Thanks for [KaiYuanShe][12]'s donation, we get a fast local mirror for China mainland:
+
+> https://polyfill.kaiyuanshe.cn/
+
 ## Inspired by
 
 1. https://polyfill.io/
@@ -52,3 +58,4 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 [9]: https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts
 [10]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
 [11]: https://pages.github.com/
+[12]: https://kaiyuanshe.cn/

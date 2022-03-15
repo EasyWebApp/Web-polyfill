@@ -7,10 +7,10 @@ abstract class IntlPolyfill extends Polyfill {
 }
 
 export class GetCanonicalLocales extends IntlPolyfill {
-    packageName = '@formatjs/intl-getcanonicallocates';
+    packageName = '@formatjs/intl-getcanonicallocales';
 
     detect = function () {
-        return window.Intl && 'getCanonicalLocates' in window.Intl;
+        return window.Intl && 'getCanonicalLocales' in window.Intl;
     };
 }
 

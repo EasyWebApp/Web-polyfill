@@ -16,14 +16,14 @@ export abstract class Polyfill {
     get packageURLs() {
         return [this.packageBase];
     }
-
-    get allURLs(): string[] {
+    get allPackageURLs(): string[] {
         const dependencyURLs = this.dependencies
-            .map(({ allURLs }) => allURLs)
+            .map(({ allPackageURLs }) => allPackageURLs)
             .flat(Infinity) as string[];
 
         return [...new Set([...dependencyURLs, ...this.packageURLs])];
     }
+    sourceMapURLs: string[] = [];
 
     abstract detect(): boolean;
 
@@ -36,7 +36,7 @@ export abstract class Polyfill {
 
     saveDetector() {
         const { name } = this.constructor;
-        const { allURLs, detect } = this;
+        const { allPackageURLs, detect } = this;
 
         return outputFile(
             `public/feature/${name}.js`,
@@ -52,7 +52,7 @@ export abstract class Polyfill {
     var origin = currentURL.split('/').slice(0, 3).join('/');
 
     var paths = ${JSON.stringify(
-        allURLs.map(packageURL => this.clientPathOf(packageURL)),
+        allPackageURLs.map(packageURL => this.clientPathOf(packageURL)),
         null,
         4
     )};
@@ -90,6 +90,8 @@ export abstract class Polyfill {
             sourceURL: mapURL,
             targetPath: 'public'
         });
+        this.sourceMapURLs.push(mapURL);
+
         console.log(`[save] ${mapURL}`);
     }
 
