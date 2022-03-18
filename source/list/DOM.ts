@@ -1,4 +1,6 @@
 import { Polyfill } from '../Polyfill';
+import { ECMAScript6 } from './ES';
+import { EventTarget } from './BOM';
 
 export class ResizeObserver extends Polyfill {
     packageName = 'resize-observer-polyfill';
@@ -19,19 +21,29 @@ export class IntersectionObserver extends Polyfill {
     };
 }
 
-export class EventSubmitter extends Polyfill {
-    packageName = 'event-submitter-polyfill';
-
-    detect = function () {
-        return true;
-    };
-}
-
 export class ScrollBehavior extends Polyfill {
     packageName = 'scroll-behavior-polyfill';
 
     detect = function () {
         return 'scrollBehavior' in document.documentElement.style;
+    };
+}
+
+export class WebAnimation extends Polyfill {
+    packageName = 'web-animations-js';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return window.Animation instanceof Function;
+    };
+}
+
+export class EventSubmitter extends Polyfill {
+    packageName = 'event-submitter-polyfill';
+
+    detect = function () {
+        return true;
     };
 }
 
@@ -72,5 +84,25 @@ export class ElementInternals extends Polyfill {
 
     detect = function () {
         return window.ElementInternals instanceof Function;
+    };
+}
+
+export class AdoptedStyleSheets extends Polyfill {
+    packageName = 'construct-style-sheets-polyfill';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return 'adoptedStyleSheets' in document;
+    };
+}
+
+export class PointerEvents extends Polyfill {
+    packageName = '@wessberg/pointer-events';
+
+    dependencies = [new ECMAScript6(), new EventTarget()];
+
+    detect = function () {
+        return window.PointerEvent instanceof Function;
     };
 }

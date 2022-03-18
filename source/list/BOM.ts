@@ -1,6 +1,14 @@
 import { Polyfill } from '../Polyfill';
 import { ECMAScript6 } from './ES';
 
+export class TextEncoder extends Polyfill {
+    packageName = 'fastestsmallesttextencoderdecoder-encodeinto';
+
+    detect = function () {
+        return window.TextEncoder instanceof Function;
+    };
+}
+
 export class URL extends Polyfill {
     packageName = 'url-polyfill';
 

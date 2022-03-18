@@ -32,7 +32,8 @@ export async function savePolyfills(meta: typeof polyfills) {
 
 export async function makeHomePage(saved_polyfills: SavedPolyfill[]) {
     const table = saved_polyfills.map(
-        ({ name, packageName, sourceMapURLs }) => ({
+        ({ name, packageName, sourceMapURLs }, index) => ({
+            'No.': ++index + '',
             Name: name,
             Package: `[\`${packageName}\`](https://www.npmjs.com/package/${packageName})`,
             'Source Map': sourceMapURLs[0] ? `✅` : ''
@@ -45,7 +46,10 @@ export async function makeHomePage(saved_polyfills: SavedPolyfill[]) {
 ${makeMarkdownTable(table)}`;
 
     return `<head>
+    <meta charset="utf-8">
+
     <title>Web polyfill</title>
+    <link rel="icon" href="https://github.com/EasyWebApp.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

@@ -33,7 +33,7 @@ export class ECMAScript extends Polyfill {
     packageName = 'core-js-bundle';
 
     detect = function () {
-        return window.Promise instanceof Function;
+        return ''.at instanceof Function;
     };
 }
 
