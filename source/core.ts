@@ -1,7 +1,7 @@
 import { readFile } from 'fs-extra';
 import { marked } from 'marked';
+import { makeMarkdownTable } from '@tech_query/node-toolkit';
 
-import { makeMarkdownTable } from './utility';
 import { Polyfill } from './Polyfill';
 import * as polyfills from './list';
 
@@ -55,6 +55,7 @@ ${makeMarkdownTable(table)}`;
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism-okaidia.min.css">
 </head>
 <body class="p-3 markdown-body">
 ${marked(homeBody)}
