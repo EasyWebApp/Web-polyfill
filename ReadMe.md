@@ -42,6 +42,26 @@ Thanks for [KaiYuanShe][14]'s donation, we get a fast local mirror for China mai
 
 > https://polyfill.kaiyuanshe.cn/
 
+### Custom examples
+
+Edit `.env` content to fit your situation:
+
+```ini
+WAN_ICON=🇺🇦
+WAN_HOST=https://polyfill.example.ua
+LAN_ICON=🇷🇺
+LAN_HOST=https://polyfill.example.ru
+```
+
+or
+
+```ini
+WAN_ICON=🇰🇷
+WAN_HOST=https://polyfill.example.kr
+LAN_ICON=🇰🇵
+LAN_HOST=https://polyfill.example.kp
+```
+
 ## Inspired by
 
 1. https://polyfill.io/

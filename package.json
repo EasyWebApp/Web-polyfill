@@ -1,6 +1,6 @@
 {
     "name": "web-polyfill",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "license": "AGPL-3.0",
     "author": "shiy2008@gmail.com",
     "description": "An automatic CDN service for Web polyfills, which is based on TypeScript, Node.js & JSDelivr.",
@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@tech_query/node-toolkit": "^1.2.0",
+        "dotenv": "^16.0.0",
         "fs-extra": "^10.1.0",
         "koapache": "^2.2.1",
         "marked": "^4.0.14",

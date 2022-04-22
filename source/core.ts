@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { readFile } from 'fs-extra';
 import { marked } from 'marked';
 import { makeMarkdownTable } from '@tech_query/node-toolkit';
@@ -30,13 +31,19 @@ export async function savePolyfills(meta: typeof polyfills) {
     return saved_polyfills;
 }
 
+const { WAN_ICON, WAN_HOST, LAN_ICON, LAN_HOST } = process.env;
+
 export async function makeHomePage(saved_polyfills: SavedPolyfill[]) {
     const table = saved_polyfills.map(
         ({ name, packageName, sourceMapURLs }, index) => ({
             'No.': ++index + '',
             Name: name,
             Package: `[\`${packageName}\`](https://www.npmjs.com/package/${packageName})`,
-            'Source Map': sourceMapURLs[0] ? `✅` : ''
+            'Source Map': sourceMapURLs[0] ? `✅` : '',
+            Network: [
+                `[${WAN_ICON}](${WAN_HOST}/feature/${name}.js)`,
+                `[${LAN_ICON}](${LAN_HOST}/feature/${name}.js)`
+            ].join(' ')
         })
     );
     const homeBody = `${await readFile('ReadMe.md')}
