@@ -1,0 +1,303 @@
+<head>
+    <meta charset="utf-8">
+
+    <title>Web polyfill</title>
+    <link rel="icon" href="https://github.com/EasyWebApp.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism-okaidia.min.css">
+</head>
+<body class="p-3 markdown-body">
+<h1 id="web-polyfill">Web polyfill</h1>
+<p>An automatic <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> service for <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">Web polyfills</a>, which is based on <a href="https://www.typescriptlang.org/">TypeScript</a>, <a href="https://nodejs.org/">Node.js</a> &amp; <a href="https://www.jsdelivr.com/">JSDelivr</a>.</p>
+<p><a href="https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml"><img src="https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml/badge.svg" alt="CI &amp; CD"></a></p>
+<h2 id="usage-example">Usage example</h2>
+<ol>
+<li>Find a Web feature in the <a href="https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list.ts">Polyfill directory</a></li>
+<li>Copy the <code>class</code> name of the selected polyfill, then write it into a specific Script URL (shown below)</li>
+<li>the above script will detect whether current environment needs to be patched, then load the polyfill script original from JSDelivr</li>
+</ol>
+<h3 id="web-pages">Web pages</h3>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;script src=&quot;https://polyfill.web-cell.dev/feature/ResizeObserver.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<h3 id="web-workers">Web workers</h3>
+<pre><code class="language-javascript">self.importScripts(&#39;https://polyfill.web-cell.dev/feature/Regenerator.js&#39;);
+</code></pre>
+<h2 id="add-more-polyfills">Add more polyfills</h2>
+<ol>
+<li>For <strong>junior engineers</strong>, you can <a href="https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&amp;labels=package&amp;template=package.md&amp;title=">submit an issue</a> and wait for the maintainer reaction</li>
+<li>For <strong>senior engineers</strong>, just <a href="https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts">edit the Polyfill directory</a>, and make a pull request</li>
+<li>After your pull request reviewd &amp; merged, the polyfills will be updated by <a href="https://github.com/features/actions">GitHub actions</a> automatically</li>
+</ol>
+<h2 id="host-your-own-mirror">Host your own mirror</h2>
+<ol>
+<li>Fork <a href="https://github.com/EasyWebApp/Web-polyfill">this repository</a></li>
+<li>Replace original <strong>HTTP domain</strong> with yours in <a href="https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27">GitHub action configuration</a></li>
+<li>You can replace <a href="https://pages.github.com/">GitHub pages</a> with an <strong>Object Storage service</strong> (AWS S3, etc.)</li>
+</ol>
+<h3 id="china-mainland">China mainland</h3>
+<p>Thanks for <a href="https://kaiyuanshe.cn/">KaiYuanShe</a>&#39;s donation, we get a fast local mirror for China mainland:</p>
+<blockquote>
+<p><a href="https://polyfill.kaiyuanshe.cn/">https://polyfill.kaiyuanshe.cn/</a></p>
+</blockquote>
+<h3 id="custom-examples">Custom examples</h3>
+<p>Edit <code>.env</code> content to fit your situation:</p>
+<pre><code class="language-ini">WAN_ICON=🇺🇦
+WAN_HOST=https://polyfill.example.ua
+LAN_ICON=🇷🇺
+LAN_HOST=https://polyfill.example.ru
+</code></pre>
+<p>or</p>
+<pre><code class="language-ini">WAN_ICON=🇰🇷
+WAN_HOST=https://polyfill.example.kr
+LAN_ICON=🇰🇵
+LAN_HOST=https://polyfill.example.kp
+</code></pre>
+<h2 id="inspired-by">Inspired by</h2>
+<ol>
+<li><a href="https://polyfill.io/">https://polyfill.io/</a></li>
+<li><a href="https://polyfill.dev/">https://polyfill.dev/</a></li>
+</ol>
+<h2 id="all-supported-polyfills">All supported polyfills</h2>
+<table>
+<thead>
+<tr>
+<th align="center">No.</th>
+<th align="center">Name</th>
+<th align="center">Package</th>
+<th align="center">Source Map</th>
+<th align="center">Network</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">ECMAScript6</td>
+<td align="center"><a href="https://www.npmjs.com/package/es6-shim"><code>es6-shim</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ECMAScript6.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ECMAScript6.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Proxy</td>
+<td align="center"><a href="https://www.npmjs.com/package/es6-proxy-polyfill"><code>es6-proxy-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Proxy.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Proxy.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">ECMAScript7</td>
+<td align="center"><a href="https://www.npmjs.com/package/es7-shim"><code>es7-shim</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ECMAScript7.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ECMAScript7.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">ECMAScript</td>
+<td align="center"><a href="https://www.npmjs.com/package/core-js-bundle"><code>core-js-bundle</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ECMAScript.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ECMAScript.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">Regenerator</td>
+<td align="center"><a href="https://www.npmjs.com/package/regenerator-runtime"><code>regenerator-runtime</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Regenerator.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Regenerator.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">GetCanonicalLocales</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-getcanonicallocales"><code>@formatjs/intl-getcanonicallocales</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/GetCanonicalLocales.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/GetCanonicalLocales.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">Locale</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-locale"><code>@formatjs/intl-locale</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Locale.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Locale.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">PluralRules</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-pluralrules"><code>@formatjs/intl-pluralrules</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/PluralRules.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/PluralRules.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">DisplayNames</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-displaynames"><code>@formatjs/intl-displaynames</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/DisplayNames.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/DisplayNames.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">ListFormat</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-listformat"><code>@formatjs/intl-listformat</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ListFormat.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ListFormat.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">NumberFormat</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-numberformat"><code>@formatjs/intl-numberformat</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/NumberFormat.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/NumberFormat.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">DateTimeFormat</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-datetimeformat"><code>@formatjs/intl-datetimeformat</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/DateTimeFormat.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/DateTimeFormat.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">RelativeTimeFormat</td>
+<td align="center"><a href="https://www.npmjs.com/package/@formatjs/intl-relativetimeformat"><code>@formatjs/intl-relativetimeformat</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/RelativeTimeFormat.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/RelativeTimeFormat.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">ResizeObserver</td>
+<td align="center"><a href="https://www.npmjs.com/package/resize-observer-polyfill"><code>resize-observer-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ResizeObserver.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ResizeObserver.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">IntersectionObserver</td>
+<td align="center"><a href="https://www.npmjs.com/package/intersection-observer"><code>intersection-observer</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/IntersectionObserver.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/IntersectionObserver.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ScrollBehavior</td>
+<td align="center"><a href="https://www.npmjs.com/package/scroll-behavior-polyfill"><code>scroll-behavior-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ScrollBehavior.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ScrollBehavior.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">WebAnimation</td>
+<td align="center"><a href="https://www.npmjs.com/package/web-animations-js"><code>web-animations-js</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/WebAnimation.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/WebAnimation.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">EventSubmitter</td>
+<td align="center"><a href="https://www.npmjs.com/package/event-submitter-polyfill"><code>event-submitter-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/EventSubmitter.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/EventSubmitter.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center">Dialog</td>
+<td align="center"><a href="https://www.npmjs.com/package/dialog-polyfill"><code>dialog-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Dialog.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Dialog.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">WebComponents</td>
+<td align="center"><a href="https://www.npmjs.com/package/@webcomponents/webcomponentsjs"><code>@webcomponents/webcomponentsjs</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/WebComponents.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/WebComponents.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center">ElementInternals</td>
+<td align="center"><a href="https://www.npmjs.com/package/element-internals-polyfill"><code>element-internals-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/ElementInternals.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/ElementInternals.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td align="center">AdoptedStyleSheets</td>
+<td align="center"><a href="https://www.npmjs.com/package/construct-style-sheets-polyfill"><code>construct-style-sheets-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/AdoptedStyleSheets.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/AdoptedStyleSheets.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center">PointerEvents</td>
+<td align="center"><a href="https://www.npmjs.com/package/@wessberg/pointer-events"><code>@wessberg/pointer-events</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/PointerEvents.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/PointerEvents.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">24</td>
+<td align="center">TextEncoder</td>
+<td align="center"><a href="https://www.npmjs.com/package/fastestsmallesttextencoderdecoder-encodeinto"><code>fastestsmallesttextencoderdecoder-encodeinto</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/TextEncoder.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/TextEncoder.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center">URL</td>
+<td align="center"><a href="https://www.npmjs.com/package/url-polyfill"><code>url-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/URL.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/URL.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">26</td>
+<td align="center">URLPattern</td>
+<td align="center"><a href="https://www.npmjs.com/package/urlpattern-polyfill"><code>urlpattern-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/URLPattern.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/URLPattern.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">27</td>
+<td align="center">Fetch</td>
+<td align="center"><a href="https://www.npmjs.com/package/whatwg-fetch"><code>whatwg-fetch</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Fetch.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Fetch.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">28</td>
+<td align="center">EventTarget</td>
+<td align="center"><a href="https://www.npmjs.com/package/event-target-polyfill"><code>event-target-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/EventTarget.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/EventTarget.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">29</td>
+<td align="center">AbortController</td>
+<td align="center"><a href="https://www.npmjs.com/package/yet-another-abortcontroller-polyfill"><code>yet-another-abortcontroller-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/AbortController.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/AbortController.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td align="center">Clipboard</td>
+<td align="center"><a href="https://www.npmjs.com/package/clipboard-polyfill"><code>clipboard-polyfill</code></a></td>
+<td align="center">✅</td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Clipboard.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Clipboard.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">31</td>
+<td align="center">PWAManifest</td>
+<td align="center"><a href="https://www.npmjs.com/package/pwacompat"><code>pwacompat</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/PWAManifest.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/PWAManifest.js">🇨🇳</a></td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">Share</td>
+<td align="center"><a href="https://www.npmjs.com/package/share-api-polyfill"><code>share-api-polyfill</code></a></td>
+<td align="center"></td>
+<td align="center"><a href="https://polyfill.web-cell.dev/feature/Share.js">🇺🇳</a> <a href="https://polyfill.kaiyuanshe.cn/feature/Share.js">🇨🇳</a></td>
+</tr>
+</tbody></table>
+
+</body>
