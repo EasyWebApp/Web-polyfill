@@ -17,6 +17,14 @@ export class URL extends Polyfill {
     };
 }
 
+export class URLPattern extends Polyfill {
+    packageName = 'urlpattern-polyfill';
+
+    detect = function () {
+        return window['URLPattern'] instanceof Function;
+    };
+}
+
 export class Fetch extends Polyfill {
     packageName = 'whatwg-fetch';
 
