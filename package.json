@@ -23,22 +23,22 @@
     },
     "dependencies": {
         "@tech_query/node-toolkit": "^1.2.0",
-        "dotenv": "^16.0.1",
+        "dotenv": "^16.0.3",
         "fs-extra": "^10.1.0",
         "koapache": "^2.2.1",
-        "marked": "^4.0.16",
+        "marked": "^4.1.1",
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
         "@types/fs-extra": "^9.0.13",
-        "@types/marked": "^4.0.3",
-        "@types/node": "^14.18.18",
-        "@types/node-fetch": "^2.6.1",
+        "@types/marked": "^4.0.7",
+        "@types/node": "^16.11.65",
+        "@types/node-fetch": "^2.6.2",
         "husky": "^8.0.1",
-        "lint-staged": "^12.4.2",
-        "prettier": "^2.6.2",
-        "ts-node": "^10.8.0",
-        "typescript": "^4.7.2"
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1",
+        "ts-node": "^10.9.1",
+        "typescript": "~4.8.4"
     },
     "prettier": {
         "singleQuote": true,

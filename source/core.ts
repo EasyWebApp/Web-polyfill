@@ -60,9 +60,9 @@ ${makeMarkdownTable(table)}`;
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap-utilities.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/github-markdown-css">
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.min.css">
 </head>
 <body class="p-3 markdown-body">
 ${marked(homeBody)}
