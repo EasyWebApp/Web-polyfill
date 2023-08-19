@@ -4,7 +4,7 @@ import { parse } from 'path';
 import { saveAs } from './utility';
 
 export abstract class Polyfill {
-    mirrorBase = 'https://cdn.jsdelivr.net/npm/';
+    mirrorBase = 'https://unpkg.com/';
 
     abstract packageName: string;
 

@@ -60,7 +60,7 @@ export class Clipboard extends Polyfill {
 
     get packageURLs() {
         return [
-            `${this.packageBase}/dist/overwrite-globals/clipboard-polyfill.overwrite-globals.js`
+            `${this.packageBase}/dist/es5/overwrite-globals/clipboard-polyfill.overwrite-globals.es5.js`
         ];
     }
     detect = function () {

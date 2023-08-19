@@ -71,7 +71,7 @@ export class WebComponents extends Polyfill {
 
         return [
             `${packageBase}/custom-elements-es5-adapter.js`,
-            `${packageBase}/webcomponents-bundle.min.js`
+            `${packageBase}/webcomponents-bundle.js`
         ];
     }
     detect = function () {
