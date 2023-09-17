@@ -21,23 +21,24 @@
     "bugs": {
         "url": "https://github.com/EasyWebApp/Web-polyfill/issues"
     },
+    "engines": {
+        "node": ">=18"
+    },
     "dependencies": {
         "@tech_query/node-toolkit": "^1.2.1",
         "dotenv": "^16.3.1",
         "fs-extra": "^11.1.1",
         "koapache": "^2.2.2",
-        "marked": "^7.0.3",
-        "node-fetch": "^2.6.13"
+        "marked": "^9.0.2"
     },
     "devDependencies": {
-        "@types/fs-extra": "^11.0.1",
-        "@types/node": "^18.17.6",
-        "@types/node-fetch": "^2.6.4",
+        "@types/fs-extra": "^11.0.2",
+        "@types/node": "^18.17.17",
         "husky": "^8.0.3",
-        "lint-staged": "^14.0.0",
-        "prettier": "^3.0.2",
-        "ts-node": "^10.9.1",
-        "typescript": "~5.1.6"
+        "lint-staged": "^14.0.1",
+        "prettier": "^3.0.3",
+        "tsx": "^3.12.10",
+        "typescript": "~5.2.2"
     },
     "prettier": {
         "singleQuote": true,
@@ -51,7 +52,7 @@
     "scripts": {
         "prepare": "husky install",
         "test": "lint-staged",
-        "generate": "rm -rf public/  &&  ts-node source/",
+        "generate": "rm -rf public/  &&  tsx source/",
         "start": "web-server public/ -p 8080"
     }
 }

@@ -1,6 +1,5 @@
-import { join, parse } from 'path';
-import fetch from 'node-fetch';
 import { outputFile } from 'fs-extra';
+import { join, parse } from 'path';
 
 interface SaveOption {
     type?: 'text';

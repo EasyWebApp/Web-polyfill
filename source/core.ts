@@ -52,19 +52,24 @@ export async function makeHomePage(saved_polyfills: SavedPolyfill[]) {
 
 ${makeMarkdownTable(table)}`;
 
-    return `<head>
-    <meta charset="utf-8">
+    return `<!DocType HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
 
-    <title>Web polyfill</title>
-    <link rel="icon" href="https://github.com/EasyWebApp.png">
+        <title>Web polyfill</title>
+        <link rel="icon" href="https://github.com/EasyWebApp.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap-utilities.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/github-markdown-css">
-    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.min.css">
-</head>
-<body class="p-3 markdown-body">
-${marked(homeBody)}
-</body>`;
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap-utilities.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/github-markdown-css">
+        <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    </head>
+    <body class="p-3 markdown-body">
+        ${marked(homeBody)}
+        <script src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
+        <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    </body>
+<html>`;
 }
