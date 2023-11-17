@@ -74,7 +74,7 @@ LAN_HOST=https://polyfill.example.kp
 [5]: https://www.jsdelivr.com/
 [6]: https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml
 [7]: https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list.ts
-[8]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.md&title=
+[8]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.yml
 [9]: https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts
 [10]: https://github.com/features/actions
 [11]: https://github.com/EasyWebApp/Web-polyfill

@@ -1,0 +1,40 @@
+# Reference: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+
+name: 📦Package
+description: New package
+labels:
+    - package
+assignees: TechQuery
+
+# Reference: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+body:
+    - type: textarea
+      attributes:
+          label: Web feature summary
+          description: Its official name and description
+      validations:
+          required: true
+    - type: markdown
+      attributes:
+          value: |
+              ## Reference
+    - type: input
+      attributes:
+          label: Specification
+          description: https://www.w3.org/ , https://whatwg.org/ or https://tc39.es/
+      validations:
+          required: true
+    - type: input
+      attributes:
+          label: Documentation
+          description: https://developer.mozilla.org/
+      validations:
+          required: true
+    - type: input
+      attributes:
+          label: Git repository
+          description: https://github.com/ or https://gitlab.com/
+    - type: input
+      attributes:
+          label: NPM package
+          description: https://www.npmjs.com/

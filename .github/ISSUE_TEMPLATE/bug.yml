@@ -1,0 +1,35 @@
+# Reference: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms
+
+name: 🐞Bug
+description: Bug feedback
+labels:
+    - bug
+assignees: TechQuery
+
+# Reference: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+body:
+    - type: textarea
+      attributes:
+          label: Operation steps
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: Expect result
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: Actual behavior
+          description: better with Screen Shot or Record
+      validations:
+          required: true
+    - type: markdown
+      attributes:
+          value: |
+              ## Environment
+    - type: input
+      attributes:
+          label: User Agent string
+      validations:
+          required: true
