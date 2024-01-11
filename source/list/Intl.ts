@@ -54,6 +54,21 @@ export class ListFormat extends IntlPolyfill {
     };
 }
 
+export class Segmenter extends IntlPolyfill {
+    packageName = 'intl-segmenter-polyfill-rs-web';
+
+    get packageURLs() {
+        return [
+            `${this.packageBase}/intl_segmenter_polyfill_rs.js`,
+            `${this.packageBase}/intl_segmenter_polyfill_rs_bg.wasm`
+        ];
+    }
+
+    detect = function () {
+        return window.Intl && 'Segmenter' in window.Intl;
+    };
+}
+
 export class NumberFormat extends IntlPolyfill {
     packageName = '@formatjs/intl-numberformat';
 

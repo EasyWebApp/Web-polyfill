@@ -27,18 +27,18 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 ## Add more polyfills
 
 1. For **junior engineers**, you can [submit an issue][8] and wait for the maintainer reaction
-2. For **senior engineers**, just [edit the Polyfill directory][9], and make a pull request
-3. After your pull request reviewd & merged, the polyfills will be updated by [GitHub actions][10] automatically
+2. For **senior engineers**, just [edit the Polyfill files][7], and make a pull request
+3. After your pull request reviewd & merged, the polyfills will be updated by [GitHub actions][9] automatically
 
 ## Host your own mirror
 
-1. Fork [this repository][11]
-2. Replace original **HTTP domain** with yours in [GitHub action configuration][12]
-3. You can replace [GitHub pages][13] with an **Object Storage service** (AWS S3, etc.)
+1. Fork [this repository][10]
+2. Replace original **HTTP domain** with yours in [GitHub action configuration][11]
+3. You can replace [GitHub pages][12] with an **Object Storage service** (AWS S3, etc.)
 
 ### China mainland
 
-Thanks for [KaiYuanShe][14]'s donation, we get a fast local mirror for China mainland:
+Thanks for [KaiYuanShe][13]'s donation, we get a fast local mirror for China mainland:
 
 > https://polyfill.kaiyuanshe.cn/
 
@@ -65,7 +65,7 @@ LAN_HOST=https://polyfill.example.kp
 ## Inspired by
 
 1. https://polyfill.io/
-2. https://polyfill.dev/
+2. https://polyfiller.kaiyuanshe.cn/
 
 [1]: https://en.wikipedia.org/wiki/Content_delivery_network
 [2]: https://remysharp.com/2010/10/08/what-is-a-polyfill
@@ -73,11 +73,10 @@ LAN_HOST=https://polyfill.example.kp
 [4]: https://nodejs.org/
 [5]: https://www.jsdelivr.com/
 [6]: https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml
-[7]: https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list.ts
+[7]: https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list
 [8]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.yml
-[9]: https://github.com/EasyWebApp/Web-polyfill/edit/master/source/list.ts
-[10]: https://github.com/features/actions
-[11]: https://github.com/EasyWebApp/Web-polyfill
-[12]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
-[13]: https://pages.github.com/
-[14]: https://kaiyuanshe.cn/
+[9]: https://github.com/features/actions
+[10]: https://github.com/EasyWebApp/Web-polyfill
+[11]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
+[12]: https://pages.github.com/
+[13]: https://kaiyuanshe.cn/
