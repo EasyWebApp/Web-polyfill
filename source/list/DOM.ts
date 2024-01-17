@@ -47,6 +47,14 @@ export class EventSubmitter extends Polyfill {
     };
 }
 
+export class Detail extends Polyfill {
+    packageName = 'details-element-polyfill';
+
+    detect = function () {
+        return 'HTMLDetailsElement' in window;
+    };
+}
+
 export class Dialog extends Polyfill {
     packageName = 'dialog-polyfill';
 
