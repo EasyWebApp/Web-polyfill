@@ -44,12 +44,15 @@ export class EventTarget extends Polyfill {
 }
 
 export class AbortController extends Polyfill {
-    packageName = 'yet-another-abortcontroller-polyfill';
+    packageName = 'abortcontroller-polyfill';
 
     dependencies = [new EventTarget(), new Fetch()];
 
+    get packageURLs() {
+        return [`${this.packageBase}/dist/polyfill-patch-fetch.js`];
+    }
     detect = function () {
-        return window.AbortController instanceof Function;
+        return window.AbortSignal instanceof Function;
     };
 }
 
