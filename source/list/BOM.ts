@@ -1,5 +1,5 @@
 import { Polyfill } from '../Polyfill';
-import { ECMAScript6 } from './ES';
+import { ECMAScript, ECMAScript6 } from './ES';
 
 export class TextEncoder extends Polyfill {
     packageName = 'fastestsmallesttextencoderdecoder-encodeinto';
@@ -22,6 +22,23 @@ export class URLPattern extends Polyfill {
 
     detect = function () {
         return window['URLPattern'] instanceof Function;
+    };
+}
+
+export class Stream extends Polyfill {
+    packageName = 'web-streams-polyfill';
+
+    dependencies = [new ECMAScript()];
+
+    get packageURLs() {
+        return [`${this.packageBase}/dist/polyfill.es5.js`];
+    }
+
+    detect = function () {
+        return (
+            window.ReadableStream[window.Symbol.asyncIterator] instanceof
+            Function
+        );
     };
 }
 
