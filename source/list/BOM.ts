@@ -105,3 +105,13 @@ export class Share extends Polyfill {
         return navigator.share instanceof Function;
     };
 }
+
+export class WakeLock extends Polyfill {
+    packageName = 'wakelock-lazy-polyfill';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return navigator.wakeLock instanceof Object;
+    };
+}

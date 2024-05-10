@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@tech_query/node-toolkit':
         specifier: ^1.2.1
-        version: 1.2.1(@types/node@18.19.31)
+        version: 1.2.1(@types/node@18.19.33)
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -19,7 +19,7 @@ importers:
         version: 11.2.0
       koapache:
         specifier: ^2.2.2
-        version: 2.2.2(@types/node@18.19.31)
+        version: 2.2.2(@types/node@18.19.33)
       marked:
         specifier: ^12.0.2
         version: 12.0.2
@@ -28,8 +28,8 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
       '@types/node':
-        specifier: ^18.19.31
-        version: 18.19.31
+        specifier: ^18.19.33
+        version: 18.19.33
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -40,8 +40,8 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       tsx:
-        specifier: ^4.9.1
-        version: 4.9.1
+        specifier: ^4.9.4
+        version: 4.9.4
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -360,8 +360,8 @@ packages:
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
 
-  '@types/node@18.19.31':
-    resolution: {integrity: sha512-ArgCD39YpyyrtFKIqMDvjz79jto5fcI/SVUs2HwB+f0dAzq68yqOdyaSivLiLugSziTpNXLQrVb7RZFmdZzbhA==}
+  '@types/node@18.19.33':
+    resolution: {integrity: sha512-NR9+KrpSajr2qBVp/Yt5TU/rp+b5Mayi3+OlMlcg2cVCfRmcG5PWZ7S4+MG9PZ5gWBoc9Pd0BKSRViuBCRPu0A==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -1144,8 +1144,8 @@ packages:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
     engines: {node: '>=0.6.x'}
 
-  tsx@4.9.1:
-    resolution: {integrity: sha512-CqSJaYyZ6GEqnGtPuMPQHvUwRGU6VHSVF+RDxoOmRg/XD4aF0pD973tKhoUYGQtdcoCHcSOGk34ioFaP+vYcMQ==}
+  tsx@4.9.4:
+    resolution: {integrity: sha512-TlSJTVn2taGGDgdV3jAqCj7WQ/CafCB5p4SbG7W2Bl/0AJWH1ShJlBbc0y2lOFTjQEVAAULSTlmehw/Mwv3S/Q==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -1441,10 +1441,10 @@ snapshots:
     dependencies:
       vary: 1.1.2
 
-  '@tech_query/node-toolkit@1.2.1(@types/node@18.19.31)':
+  '@tech_query/node-toolkit@1.2.1(@types/node@18.19.33)':
     dependencies:
       '@babel/core': 7.24.5
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
       cross-spawn: 7.0.3
       file-type: 16.5.4
       fs-extra: 11.2.0
@@ -1461,21 +1461,21 @@ snapshots:
 
   '@types/accepts@1.3.7':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/co-body@6.1.3':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
       '@types/qs': 6.9.15
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/content-disposition@0.5.8': {}
 
@@ -1484,11 +1484,11 @@ snapshots:
       '@types/connect': 3.4.38
       '@types/express': 4.17.21
       '@types/keygrip': 1.0.6
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/express-serve-static-core@4.19.0':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -1502,12 +1502,12 @@ snapshots:
 
   '@types/formidable@2.0.6':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/http-assert@1.5.5': {}
 
@@ -1515,7 +1515,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/keygrip@1.0.6': {}
 
@@ -1532,11 +1532,11 @@ snapshots:
       '@types/http-errors': 2.0.4
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/mime@1.3.5': {}
 
-  '@types/node@18.19.31':
+  '@types/node@18.19.33':
     dependencies:
       undici-types: 5.26.5
 
@@ -1547,12 +1547,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 18.19.31
+      '@types/node': 18.19.33
       '@types/send': 0.17.4
 
   accepts@1.3.8:
@@ -1640,9 +1640,9 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commander-jsx@0.6.9(@types/node@18.19.31):
+  commander-jsx@0.6.9(@types/node@18.19.33):
     dependencies:
-      '@tech_query/node-toolkit': 1.2.1(@types/node@18.19.31)
+      '@tech_query/node-toolkit': 1.2.1(@types/node@18.19.33)
       tslib: 2.6.2
     transitivePeerDependencies:
       - '@babel/plugin-transform-modules-commonjs'
@@ -2035,11 +2035,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  koapache@2.2.2(@types/node@18.19.31):
+  koapache@2.2.2(@types/node@18.19.33):
     dependencies:
       '@koa/cors': 4.0.0
-      '@tech_query/node-toolkit': 1.2.1(@types/node@18.19.31)
-      commander-jsx: 0.6.9(@types/node@18.19.31)
+      '@tech_query/node-toolkit': 1.2.1(@types/node@18.19.33)
+      commander-jsx: 0.6.9(@types/node@18.19.33)
       form-data: 4.0.0
       internal-ip: 6.2.0
       koa: 2.15.3
@@ -2323,7 +2323,7 @@ snapshots:
 
   tsscmp@1.0.6: {}
 
-  tsx@4.9.1:
+  tsx@4.9.4:
     dependencies:
       esbuild: 0.20.2
       get-tsconfig: 4.7.3
