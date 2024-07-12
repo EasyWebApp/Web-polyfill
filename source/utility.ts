@@ -14,9 +14,8 @@ export async function saveAs({
     targetExtension = '',
     targetPath = process.cwd()
 }: SaveOption) {
-    const { pathname } = new URL(sourceURL);
-
     const response = await fetch(sourceURL);
+    const { pathname } = new URL(response.url);
 
     if (response.status > 299) {
         const text = await response.text();
@@ -35,5 +34,5 @@ export async function saveAs({
 
     await outputFile(ext ? path : path + targetExtension, data);
 
-    return data;
+    return { finalURL: response.url, data };
 }

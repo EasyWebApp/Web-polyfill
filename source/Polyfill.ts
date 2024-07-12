@@ -10,9 +10,16 @@ export abstract class Polyfill {
 
     dependencies: Polyfill[] = [];
 
-    get packageBase() {
+    #packageLatestBase = '';
+
+    get packageBaseURL() {
         return this.mirrorBase + this.packageName;
     }
+
+    get packageBase() {
+        return this.#packageLatestBase || this.packageBaseURL;
+    }
+
     get packageURLs() {
         return [this.packageBase];
     }
@@ -97,15 +104,20 @@ export abstract class Polyfill {
 
     async save() {
         for (const sourceURL of this.packageURLs) {
-            const code = await saveAs({
+            const { finalURL, data } = await saveAs({
                 sourceURL,
                 targetExtension: '.js',
                 targetPath: 'public'
             });
-            console.log(`[save] ${sourceURL}`);
+            this.#packageLatestBase = finalURL
+                .split('/')
+                .slice(0, -1)
+                .join('/');
+
+            console.log(`[save] ${finalURL}`);
 
             try {
-                await this.saveSourceMap(sourceURL, code);
+                await this.saveSourceMap(finalURL, data);
             } catch (error) {
                 console.error(error);
             }
