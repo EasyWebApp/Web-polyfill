@@ -1,4 +1,4 @@
-import { outputFile } from 'fs-extra';
+import { exists, outputFile } from 'fs-extra';
 import { parse } from 'path';
 
 import { saveAs } from './utility';
@@ -32,6 +32,9 @@ export abstract class Polyfill {
     }
     sourceMapURLs: string[] = [];
 
+    get detectorPath() {
+        return `public/feature/${this.constructor.name}.js`;
+    }
     abstract detect(): boolean;
 
     clientPathOf(packageURL: string) {
@@ -41,12 +44,13 @@ export abstract class Polyfill {
         return `${pathname}${ext ? '' : '.js'}`;
     }
 
-    saveDetector() {
-        const { name } = this.constructor;
-        const { allPackageURLs, detect } = this;
+    async saveDetector() {
+        const { dependencies, detectorPath, detect } = this;
+
+        for (const polyfill of dependencies) await polyfill.save();
 
         return outputFile(
-            `public/feature/${name}.js`,
+            detectorPath,
             `(function () {
     var hasFeature = (${detect})();
 
@@ -59,7 +63,7 @@ export abstract class Polyfill {
     var origin = currentURL.split('/').slice(0, 3).join('/');
 
     var paths = ${JSON.stringify(
-        allPackageURLs.map(packageURL => this.clientPathOf(packageURL)),
+        this.allPackageURLs.map(packageURL => this.clientPathOf(packageURL)),
         null,
         4
     )};
@@ -103,6 +107,8 @@ export abstract class Polyfill {
     }
 
     async save() {
+        if (await exists(this.detectorPath)) return;
+
         for (const sourceURL of this.packageURLs) {
             const { finalURL, data } = await saveAs({
                 sourceURL,

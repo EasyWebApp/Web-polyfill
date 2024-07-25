@@ -1,11 +1,3 @@
----
-name: 📦Package
-about: New package
-title: ''
-labels: package
-assignees: TechQuery
----
-
 ## Web feature summary
 
 <!-- Its official name and description -->
