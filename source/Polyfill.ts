@@ -10,8 +10,6 @@ export abstract class Polyfill {
 
     dependencies: Polyfill[] = [];
 
-    #packageLatestBase = '';
-
     get packageBase() {
         return this.mirrorBase + this.packageName;
     }
