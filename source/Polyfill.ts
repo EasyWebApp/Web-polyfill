@@ -12,24 +12,23 @@ export abstract class Polyfill {
 
     #packageLatestBase = '';
 
-    get packageBaseURL() {
-        return this.mirrorBase + this.packageName;
-    }
-
     get packageBase() {
-        return this.#packageLatestBase || this.packageBaseURL;
+        return this.mirrorBase + this.packageName;
     }
 
     get packageURLs() {
         return [this.packageBase];
     }
+
     get allPackageURLs(): string[] {
         const dependencyURLs = this.dependencies
             .map(({ allPackageURLs }) => allPackageURLs)
             .flat(Infinity) as string[];
 
-        return [...new Set([...dependencyURLs, ...this.packageURLs])];
+        return [...new Set([...dependencyURLs, ...this.sourceURLs])];
     }
+
+    sourceURLs: string[] = [];
     sourceMapURLs: string[] = [];
 
     get detectorPath() {
@@ -96,14 +95,13 @@ export abstract class Polyfill {
                 mapPath,
                 ext || sourceURL.endsWith('/') ? sourceURL : `${sourceURL}/`
             ) + '';
-
-        await saveAs({
+        const { finalURL } = await saveAs({
             sourceURL: mapURL,
             targetPath: 'public'
         });
-        this.sourceMapURLs.push(mapURL);
+        this.sourceMapURLs.push(finalURL);
 
-        console.log(`[save] ${mapURL}`);
+        console.log(`[save] ${finalURL}`);
     }
 
     async save() {
@@ -115,10 +113,7 @@ export abstract class Polyfill {
                 targetExtension: '.js',
                 targetPath: 'public'
             });
-            this.#packageLatestBase = finalURL
-                .split('/')
-                .slice(0, -1)
-                .join('/');
+            this.sourceURLs.push(finalURL);
 
             console.log(`[save] ${finalURL}`);
 

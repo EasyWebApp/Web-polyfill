@@ -15,7 +15,7 @@ export async function saveAs({
     targetPath = process.cwd()
 }: SaveOption) {
     const response = await fetch(sourceURL);
-    const { pathname } = new URL(response.url);
+    const { href, pathname } = new URL(response.url);
 
     if (response.status > 299) {
         const text = await response.text();
@@ -30,9 +30,9 @@ export async function saveAs({
     const data = await response[type]();
 
     const path = join(targetPath, pathname),
-        { ext } = parse(sourceURL);
+        { ext } = parse(href);
 
     await outputFile(ext ? path : path + targetExtension, data);
 
-    return { finalURL: response.url, data };
+    return { finalURL: href, data };
 }
