@@ -95,6 +95,14 @@ export class ElementInternals extends Polyfill {
     };
 }
 
+export class DeclarativeShadowDOM extends Polyfill {
+    packageName = 'declarative-shadow-dom-polyfill';
+
+    detect = function () {
+        return Document.parseHTMLUnsafe instanceof Function;
+    };
+}
+
 export class AdoptedStyleSheets extends Polyfill {
     packageName = 'construct-style-sheets-polyfill';
 

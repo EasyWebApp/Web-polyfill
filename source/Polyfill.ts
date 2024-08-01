@@ -1,4 +1,4 @@
-import { outputFile } from 'fs-extra';
+import { exists, outputFile } from 'fs-extra';
 import { parse } from 'path';
 
 import { saveAs } from './utility';
@@ -13,18 +13,25 @@ export abstract class Polyfill {
     get packageBase() {
         return this.mirrorBase + this.packageName;
     }
+
     get packageURLs() {
         return [this.packageBase];
     }
+
     get allPackageURLs(): string[] {
         const dependencyURLs = this.dependencies
             .map(({ allPackageURLs }) => allPackageURLs)
             .flat(Infinity) as string[];
 
-        return [...new Set([...dependencyURLs, ...this.packageURLs])];
+        return [...new Set([...dependencyURLs, ...this.sourceURLs])];
     }
+
+    sourceURLs: string[] = [];
     sourceMapURLs: string[] = [];
 
+    get detectorPath() {
+        return `public/feature/${this.constructor.name}.js`;
+    }
     abstract detect(): boolean;
 
     clientPathOf(packageURL: string) {
@@ -34,12 +41,13 @@ export abstract class Polyfill {
         return `${pathname}${ext ? '' : '.js'}`;
     }
 
-    saveDetector() {
-        const { name } = this.constructor;
-        const { allPackageURLs, detect } = this;
+    async saveDetector() {
+        const { dependencies, detectorPath, detect } = this;
+
+        for (const polyfill of dependencies) await polyfill.save();
 
         return outputFile(
-            `public/feature/${name}.js`,
+            detectorPath,
             `(function () {
     var hasFeature = (${detect})();
 
@@ -52,7 +60,7 @@ export abstract class Polyfill {
     var origin = currentURL.split('/').slice(0, 3).join('/');
 
     var paths = ${JSON.stringify(
-        allPackageURLs.map(packageURL => this.clientPathOf(packageURL)),
+        this.allPackageURLs.map(packageURL => this.clientPathOf(packageURL)),
         null,
         4
     )};
@@ -85,27 +93,30 @@ export abstract class Polyfill {
                 mapPath,
                 ext || sourceURL.endsWith('/') ? sourceURL : `${sourceURL}/`
             ) + '';
-
-        await saveAs({
+        const { finalURL } = await saveAs({
             sourceURL: mapURL,
             targetPath: 'public'
         });
-        this.sourceMapURLs.push(mapURL);
+        this.sourceMapURLs.push(finalURL);
 
-        console.log(`[save] ${mapURL}`);
+        console.log(`[save] ${finalURL}`);
     }
 
     async save() {
+        if (await exists(this.detectorPath)) return;
+
         for (const sourceURL of this.packageURLs) {
-            const code = await saveAs({
+            const { finalURL, data } = await saveAs({
                 sourceURL,
                 targetExtension: '.js',
                 targetPath: 'public'
             });
-            console.log(`[save] ${sourceURL}`);
+            this.sourceURLs.push(finalURL);
+
+            console.log(`[save] ${finalURL}`);
 
             try {
-                await this.saveSourceMap(sourceURL, code);
+                await this.saveSourceMap(finalURL, data);
             } catch (error) {
                 console.error(error);
             }

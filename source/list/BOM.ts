@@ -20,6 +20,10 @@ export class URL extends Polyfill {
 export class URLPattern extends Polyfill {
     packageName = 'urlpattern-polyfill';
 
+    get packageURLs() {
+        return [`${this.packageBase}@1.0.0-rc5/dist/index.umd.js`];
+    }
+
     detect = function () {
         return window['URLPattern'] instanceof Function;
     };
