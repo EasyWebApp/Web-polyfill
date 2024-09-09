@@ -1,6 +1,6 @@
 {
     "name": "web-polyfill",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "license": "AGPL-3.0",
     "author": "shiy2008@gmail.com",
     "description": "An automatic CDN service for Web polyfills, which is based on TypeScript, Node.js & UnPkg.",
@@ -54,7 +54,7 @@
     },
     "scripts": {
         "prepare": "husky",
-        "test": "lint-staged",
+        "test": "lint-staged  &&  tsc --noEmit",
         "generate": "rm -rf public/  &&  tsx source/",
         "start": "web-server public/ -p 8080"
     }

@@ -7,15 +7,17 @@ jobs:
     Build-and-Publish:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
 
-            - uses: pnpm/action-setup@v2
+            - uses: pnpm/action-setup@v4
               with:
                   version: 9
-            - uses: actions/setup-node@v3
+
+            - uses: actions/setup-node@v4
               with:
-                  node-version: 18
+                  node-version: 20
                   cache: pnpm
+
             - name: Install Dependencies
               run: pnpm i --frozen-lockfile
 
@@ -23,7 +25,7 @@ jobs:
               run: pnpm generate
 
             - name: Deploy for Global
-              uses: peaceiris/actions-gh-pages@v3
+              uses: peaceiris/actions-gh-pages@v4
               with:
                   publish_dir: ./public
                   personal_token: ${{ secrets.GITHUB_TOKEN }}
@@ -31,7 +33,7 @@ jobs:
                   cname: polyfill.web-cell.dev
 
             - name: Deploy for China mainland
-              uses: bacongobbler/azure-blob-storage-upload@v2.0.0
+              uses: bacongobbler/azure-blob-storage-upload@v3.0.0
               with:
                   source_dir: ./public
                   container_name: $web

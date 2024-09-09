@@ -119,3 +119,13 @@ export class WakeLock extends Polyfill {
         return navigator.wakeLock instanceof Object;
     };
 }
+
+export class FileSystem extends Polyfill {
+    packageName = '@tech_query/native-file-system-adapter';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return window.FileSystemHandle instanceof Function;
+    };
+}
