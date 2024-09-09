@@ -47,6 +47,14 @@ export class EventSubmitter extends Polyfill {
     };
 }
 
+export class FormDataSubmitter extends Polyfill {
+    packageName = '@tech_query/formdata-submitter-polyfill';
+
+    detect = function () {
+        return true;
+    };
+}
+
 export class Detail extends Polyfill {
     packageName = 'details-element-polyfill';
 

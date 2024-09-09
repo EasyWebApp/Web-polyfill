@@ -1,6 +1,6 @@
 # Web polyfill
 
-An automatic [CDN][1] service for [Web polyfills][2], which is based on [TypeScript][3], [Node.js][4] & [JSDelivr][5].
+An automatic [CDN][1] service for [Web polyfills][2], which is based on [TypeScript][3], [Node.js][4] & [UnPkg][5].
 
 [![CI & CD](https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml/badge.svg)][6]
 
@@ -8,7 +8,7 @@ An automatic [CDN][1] service for [Web polyfills][2], which is based on [TypeScr
 
 1. Find a Web feature in the [Polyfill directory][7]
 2. Copy the `class` name of the selected polyfill, then write it into a specific Script URL (shown below)
-3. the above script will detect whether current environment needs to be patched, then load the polyfill script original from JSDelivr
+3. the above script will detect whether current environment needs to be patched, then load the polyfill script original from UnPkg
 
 ### Web pages
 
@@ -71,12 +71,12 @@ LAN_HOST=https://polyfill.example.kp
 [2]: https://remysharp.com/2010/10/08/what-is-a-polyfill
 [3]: https://www.typescriptlang.org/
 [4]: https://nodejs.org/
-[5]: https://www.jsdelivr.com/
+[5]: https://unpkg.com/
 [6]: https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml
 [7]: https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list
 [8]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.yml
 [9]: https://github.com/features/actions
 [10]: https://github.com/EasyWebApp/Web-polyfill
-[11]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L27
+[11]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L31
 [12]: https://pages.github.com/
 [13]: https://kaiyuanshe.cn/
