@@ -9,7 +9,7 @@ export interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => (
     <html>
         <head>
-            <meta charset="utf-8" />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
             <title>Web polyfill</title>
             <link rel="icon" href="https://github.com/EasyWebApp.png" />
