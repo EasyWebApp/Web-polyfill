@@ -3,7 +3,7 @@
     "version": "0.7.0",
     "license": "AGPL-3.0",
     "author": "shiy2008@gmail.com",
-    "description": "An automatic CDN service for Web polyfills, which is based on TypeScript, Node.js & JSDelivr.",
+    "description": "An automatic CDN service for Web polyfills, which is based on TypeScript, Node.js & UnPkg.",
     "keywords": [
         "web",
         "polyfill",
@@ -26,19 +26,22 @@
     },
     "dependencies": {
         "@tech_query/node-toolkit": "^1.2.1",
+        "dom-renderer": "^2.3.0",
         "dotenv": "^16.4.5",
         "fs-extra": "^11.2.0",
+        "happy-dom": "^15.7.3",
         "koapache": "^2.2.2",
-        "marked": "^13.0.3"
+        "marked": "^14.1.2",
+        "tslib": "^2.7.0"
     },
     "devDependencies": {
         "@types/fs-extra": "^11.0.4",
-        "@types/node": "^18.19.42",
-        "husky": "^9.1.4",
-        "lint-staged": "^15.2.7",
+        "@types/node": "^20.16.5",
+        "husky": "^9.1.5",
+        "lint-staged": "^15.2.10",
         "prettier": "^3.3.3",
-        "tsx": "^4.16.5",
-        "typescript": "~5.5.4"
+        "tsx": "^4.19.0",
+        "typescript": "~5.6.2"
     },
     "prettier": {
         "singleQuote": true,

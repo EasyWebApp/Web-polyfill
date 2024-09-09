@@ -1,6 +1,7 @@
-#! /usr/bin/env ts-node
+#! /usr/bin/env tsx
 
 import { outputFile } from 'fs-extra';
+import './shim';
 
 import { savePolyfills, makeHomePage } from './core';
 import * as polyfills from './list';
