@@ -65,7 +65,7 @@ export class EventTarget extends Polyfill {
 }
 
 export class AbortController extends Polyfill {
-    packageName = 'abortcontroller-polyfill';
+    packageName = '@tech_query/abortcontroller-polyfill';
 
     dependencies = [new EventTarget(), new Fetch()];
 
@@ -125,6 +125,9 @@ export class FileSystem extends Polyfill {
 
     dependencies = [new ECMAScript6()];
 
+    get packageURLs() {
+        return [`${this.packageBase}/dist/es6.js`];
+    }
     detect = function () {
         return window.FileSystemHandle instanceof Function;
     };
