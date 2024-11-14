@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
+overrides:
+  marked: ^15.0.0
+  '@tech_query/node-toolkit': ^2.0.0-alpha.0
+
 importers:
 
   .:
@@ -12,8 +16,8 @@ importers:
         specifier: ^2.0.0-alpha.0
         version: 2.0.0-alpha.0(@types/node@20.17.6)
       dom-renderer:
-        specifier: ^2.3.1
-        version: 2.3.1(happy-dom@15.9.0)(typescript@5.6.3)
+        specifier: ^2.5.1
+        version: 2.5.1(happy-dom@15.11.6)(typescript@5.6.3)
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -21,20 +25,20 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       happy-dom:
-        specifier: ^15.9.0
-        version: 15.9.0
+        specifier: ^15.11.6
+        version: 15.11.6
       koapache:
         specifier: ^2.2.2
         version: 2.2.2(@types/node@20.17.6)
       marked:
-        specifier: ^14.1.3
-        version: 14.1.3
+        specifier: ^15.0.0
+        version: 15.0.0
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
       undici:
-        specifier: ^6.20.1
-        version: 6.20.1
+        specifier: ^6.21.0
+        version: 6.21.0
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -296,15 +300,8 @@ packages:
     resolution: {integrity: sha512-Y4RrbvGTlAaa04DBoPBWJqDR5gPj32OOz827ULXfgB1F7piD1MB/zwn8JR2LAnvdILhxUbXbkXGWuNVsFuVFCQ==}
     engines: {node: '>= 14.0.0'}
 
-  '@swc/helpers@0.5.13':
-    resolution: {integrity: sha512-UoKGxQ3r5kYI9dALKJapMmuK+1zWM/H17Z1+iwnNmzcJRnfFuevZs375TA5rW31pu4BS4NoSy1fRsexDXfWn5w==}
-
-  '@tech_query/node-toolkit@1.2.1':
-    resolution: {integrity: sha512-XFw0EVc8LCcC+CNo+lCxi+5iiPzQyubz41rP4iNuMueN+kjn/KMliaHKLZ5kAnCi+HxmuJPmzrSi6vZtuP07Hg==}
-    peerDependencies:
-      '@babel/plugin-transform-modules-commonjs': ^7.0.0
-      '@babel/preset-env': ^7.0.0
-      '@types/node': '>=18'
+  '@swc/helpers@0.5.15':
+    resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
 
   '@tech_query/node-toolkit@2.0.0-alpha.0':
     resolution: {integrity: sha512-Cut9UjhydIlqvU8bTMvdI2JpTo7o9u4MQtde246yniayfV1GY2rRbz2i57W6nxRfyc69dYYn0VGZM7qT0wUXvA==}
@@ -429,8 +426,8 @@ packages:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
     engines: {node: '>= 0.4'}
 
-  caniuse-lite@1.0.30001677:
-    resolution: {integrity: sha512-fmfjsOlJUpMWu+mAAtZZZHz7UEwsUxIIvu1TJfO1HqFQvB/B+ii0xr9B5HpbZY/mC4XZ8SvjHJqtAY6pDPQEog==}
+  caniuse-lite@1.0.30001680:
+    resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -491,8 +488,8 @@ packages:
     resolution: {integrity: sha512-TG2hpqe4ELx54QER/S3HQ9SRVnQnGBtKUz5bLQWtYAQ+o6GpgMs6sYUvaiJjVxb+UXwhRhAEP3m7LbsIZ77Hmw==}
     engines: {node: '>= 0.8'}
 
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+  cross-spawn@7.0.5:
+    resolution: {integrity: sha512-ZVJrKKYunU38/76t0RMOulHOnUcbU9GbpWKAOZ0mhjr7CX6FVrH+4FrAapSOekrgFQ3f/8gwMEuIft0aKq6Hug==}
     engines: {node: '>= 8'}
 
   debug@3.2.7:
@@ -554,8 +551,8 @@ packages:
   dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
 
-  dom-renderer@2.3.1:
-    resolution: {integrity: sha512-HUbuze56l+V4JCC0LGWoslzuoUecFhx2qHNOJ8qZHrbcRRyWwGjX8L4M4IY/GTuc26pgC6b+tmtVhyA+k5xpHQ==}
+  dom-renderer@2.5.1:
+    resolution: {integrity: sha512-mntEbHrE1FtS7ZLgCVhR3BBwdJonguNhHtFr7NlAbBK8bVwxptqDbFypdxmsCrctz9YAmeHzlCoBwpM4q1dYdw==}
     peerDependencies:
       happy-dom: ^14
 
@@ -566,8 +563,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.51:
-    resolution: {integrity: sha512-kKeWV57KSS8jH4alKt/jKnvHPmJgBxXzGUSbMd4eQF+iOsVPl7bz2KUmu6eo80eMP8wVioTfTyTzdMgM15WXNg==}
+  electron-to-chromium@1.5.56:
+    resolution: {integrity: sha512-7lXb9dAvimCFdvUMTyucD4mnIndt/xhRKFAlky0CyFogdnNmdPQNoHI23msF/2V4mpTxMzgMdjK4+YRlFlRQZw==}
 
   element-internals-polyfill@1.3.12:
     resolution: {integrity: sha512-KW1k+cMGwXlx3X9nqhgmuElAfR/c/ccFt0pG4KpwK++Mx9Y+mPExxJW+jgQnqux/NQrJejgOxxg4Naf3f6y67Q==}
@@ -686,8 +683,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@15.9.0:
-    resolution: {integrity: sha512-p+6ySXcpvjVW0Xetv6e8ccT2txbDpHE0RfZOEE84tQ8ESL1nlzCjvS6fZD77DkYXE540D+2N20hhFeBN6B/CJA==}
+  happy-dom@15.11.6:
+    resolution: {integrity: sha512-elX7iUTu+5+3b2+NGQc0L3eWyq9jKhuJJ4GpOMxxT/c2pg9O3L5H3ty2VECX0XXZgRmmRqXyOK8brA2hDI6LsQ==}
     engines: {node: '>=18.0.0'}
 
   has-flag@3.0.0:
@@ -889,19 +886,14 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  marked-highlight@2.2.0:
-    resolution: {integrity: sha512-36LzwtVf7HEbbMITKU4j+iZuyWKgdXJfgYr4F5j27vs79oRPyApuBF3WkS5OsqO1+1lypWxztad7zNRM4qgXFw==}
+  marked-highlight@2.2.1:
+    resolution: {integrity: sha512-SiCIeEiQbs9TxGwle9/OwbOejHCZsohQRaNTY2u8euEXYt2rYUFoiImUirThU3Gd/o6Q1gHGtH9qloHlbJpNIA==}
     peerDependencies:
-      marked: '>=4 <15'
+      marked: ^15.0.0
 
-  marked@14.1.3:
-    resolution: {integrity: sha512-ZibJqTULGlt9g5k4VMARAktMAjXoVnnr+Y3aCqW1oDftcV4BA3UmrBifzXoZyenHRk75csiPu9iwsTj4VNBT0g==}
+  marked@15.0.0:
+    resolution: {integrity: sha512-0mouKmBROJv/WSHJBPZZyYofUgawMChnD5je/g+aOBXsHDjb/IsnTQj7mnhQZu+qPJmRQ0ecX3mLGEUm3BgwYA==}
     engines: {node: '>= 18'}
-    hasBin: true
-
-  marked@4.3.0:
-    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
-    engines: {node: '>= 12'}
     hasBin: true
 
   media-typer@0.3.0:
@@ -958,8 +950,8 @@ packages:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  object-inspect@1.13.2:
-    resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
+  object-inspect@1.13.3:
+    resolution: {integrity: sha512-kDCGIbxkDSXE3euJZZXzc6to7fCrKHNI/hSRQnRuQ+BWjFNzZwiFF8fj/6o2t2G9/jTj8PSIYTfCLelLZEeRpA==}
     engines: {node: '>= 0.4'}
 
   on-finished@2.4.1:
@@ -1209,8 +1201,8 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
-  undici@6.20.1:
-    resolution: {integrity: sha512-AjQF1QsmqfJys+LXfGTNum+qw4S88CojRInG/6t31W/1fk6G59s92bnAvGz5Cmur+kQv2SURXEvvudLmbrE8QA==}
+  undici@6.21.0:
+    resolution: {integrity: sha512-BUgJXc752Kou3oOIuU1i+yZZypyZRqNPW0vqoMPl8VaoalSfeR0D8/t4iAS3yirs79SSMTxTag+ZC86uswv+Cw==}
     engines: {node: '>=18.17'}
 
   universalify@2.0.1:
@@ -1238,8 +1230,8 @@ packages:
     resolution: {integrity: sha512-0zJXHRAYEjM2tUfZ2DiSOHAa2aw1tisnnhU3ufD57R8iefL+DcdJyRBRyJpG+NUimDgbTI/lH+gAE1PAvV3Cgw==}
     engines: {node: '>= 8'}
 
-  web-utility@4.4.1:
-    resolution: {integrity: sha512-MGmMMjSdsKWHDBpiEHa4Rve6gzFz/aB7RHYyJEKk7cwh+M5/dEjIG2kj/299PXLvHOAMxoywTBhY/d0k2lTgUA==}
+  web-utility@4.4.2:
+    resolution: {integrity: sha512-mpUh9jQ4SGSRKehfQKsvMMItzeRb5SPvYbbyksvWy5HPVsKh8VOS6ijVD0PiwaFGuv729Dg+oXzWyiibSZVCBw==}
     peerDependencies:
       typescript: '>=4.1'
 
@@ -1483,35 +1475,19 @@ snapshots:
     dependencies:
       vary: 1.1.2
 
-  '@swc/helpers@0.5.13':
+  '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
-
-  '@tech_query/node-toolkit@1.2.1(@types/node@20.17.6)':
-    dependencies:
-      '@babel/core': 7.26.0
-      '@types/node': 20.17.6
-      cross-spawn: 7.0.3
-      file-type: 16.5.4
-      fs-extra: 11.2.0
-      marked: 4.3.0
-      mime: 3.0.0
-      prettier: 2.8.8
-      prismjs: 1.29.0
-      uglify-js: 3.19.3
-      yaml: 2.6.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@tech_query/node-toolkit@2.0.0-alpha.0(@types/node@20.17.6)':
     dependencies:
       '@babel/core': 7.26.0
       '@types/node': 20.17.6
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.5
       file-type: 16.5.4
       fs-extra: 11.2.0
-      marked: 14.1.3
-      marked-highlight: 2.2.0(marked@14.1.3)
+      marked: 15.0.0
+      marked-highlight: 2.2.1(marked@15.0.0)
       mime: 3.0.0
       prettier: 2.8.8
       prismjs: 1.29.0
@@ -1645,8 +1621,8 @@ snapshots:
 
   browserslist@4.24.2:
     dependencies:
-      caniuse-lite: 1.0.30001677
-      electron-to-chromium: 1.5.51
+      caniuse-lite: 1.0.30001680
+      electron-to-chromium: 1.5.56
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
@@ -1665,7 +1641,7 @@ snapshots:
       get-intrinsic: 1.2.4
       set-function-length: 1.2.2
 
-  caniuse-lite@1.0.30001677: {}
+  caniuse-lite@1.0.30001680: {}
 
   chalk@2.4.2:
     dependencies:
@@ -1708,7 +1684,7 @@ snapshots:
 
   commander-jsx@0.6.9(@types/node@20.17.6):
     dependencies:
-      '@tech_query/node-toolkit': 1.2.1(@types/node@20.17.6)
+      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.6)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@babel/plugin-transform-modules-commonjs'
@@ -1731,7 +1707,7 @@ snapshots:
       depd: 2.0.0
       keygrip: 1.1.0
 
-  cross-spawn@7.0.3:
+  cross-spawn@7.0.5:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -1778,13 +1754,13 @@ snapshots:
       asap: 2.0.6
       wrappy: 1.0.2
 
-  dom-renderer@2.3.1(happy-dom@15.9.0)(typescript@5.6.3):
+  dom-renderer@2.5.1(happy-dom@15.11.6)(typescript@5.6.3):
     dependencies:
       declarative-shadow-dom-polyfill: 0.4.0(typescript@5.6.3)
-      happy-dom: 15.9.0
+      happy-dom: 15.11.6
       tslib: 2.8.1
       web-streams-polyfill: 4.0.0
-      web-utility: 4.4.1(typescript@5.6.3)
+      web-utility: 4.4.2(typescript@5.6.3)
     transitivePeerDependencies:
       - typescript
 
@@ -1792,7 +1768,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.51: {}
+  electron-to-chromium@1.5.56: {}
 
   element-internals-polyfill@1.3.12: {}
 
@@ -1847,7 +1823,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.5
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -1859,7 +1835,7 @@ snapshots:
 
   execa@8.0.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.5
       get-stream: 8.0.1
       human-signals: 5.0.0
       is-stream: 3.0.0
@@ -1933,7 +1909,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@15.9.0:
+  happy-dom@15.11.6:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -2131,7 +2107,7 @@ snapshots:
   koapache@2.2.2(@types/node@20.17.6):
     dependencies:
       '@koa/cors': 4.0.0
-      '@tech_query/node-toolkit': 1.2.1(@types/node@20.17.6)
+      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.6)
       commander-jsx: 0.6.9(@types/node@20.17.6)
       form-data: 4.0.1
       internal-ip: 6.2.0
@@ -2184,13 +2160,11 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  marked-highlight@2.2.0(marked@14.1.3):
+  marked-highlight@2.2.1(marked@15.0.0):
     dependencies:
-      marked: 14.1.3
+      marked: 15.0.0
 
-  marked@14.1.3: {}
-
-  marked@4.3.0: {}
+  marked@15.0.0: {}
 
   media-typer@0.3.0: {}
 
@@ -2229,7 +2203,7 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
-  object-inspect@1.13.2: {}
+  object-inspect@1.13.3: {}
 
   on-finished@2.4.1:
     dependencies:
@@ -2360,7 +2334,7 @@ snapshots:
       call-bind: 1.0.7
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
-      object-inspect: 1.13.2
+      object-inspect: 1.13.3
 
   signal-exit@3.0.7: {}
 
@@ -2442,7 +2416,7 @@ snapshots:
 
   undici-types@6.19.8: {}
 
-  undici@6.20.1: {}
+  undici@6.21.0: {}
 
   universalify@2.0.1: {}
 
@@ -2460,9 +2434,9 @@ snapshots:
 
   web-streams-polyfill@4.0.0: {}
 
-  web-utility@4.4.1(typescript@5.6.3):
+  web-utility@4.4.2(typescript@5.6.3):
     dependencies:
-      '@swc/helpers': 0.5.13
+      '@swc/helpers': 0.5.15
       element-internals-polyfill: 1.3.12
       regenerator-runtime: 0.14.1
       typescript: 5.6.3

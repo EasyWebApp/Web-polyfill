@@ -65,7 +65,7 @@ export class EventTarget extends Polyfill {
 }
 
 export class AbortController extends Polyfill {
-    packageName = '@tech_query/abortcontroller-polyfill';
+    packageName = 'abortcontroller-polyfill';
 
     dependencies = [new EventTarget(), new Fetch()];
 
