@@ -73,7 +73,7 @@ LAN_HOST=https://polyfill.example.kp
 [4]: https://nodejs.org/
 [5]: https://unpkg.com/
 [6]: https://github.com/EasyWebApp/Web-polyfill/actions/workflows/main.yml
-[7]: https://github.com/EasyWebApp/Web-polyfill/blob/master/source/list
+[7]: https://github.dev/EasyWebApp/Web-polyfill/tree/master/source/list
 [8]: https://github.com/EasyWebApp/Web-polyfill/issues/new?assignees=TechQuery&labels=package&template=package.yml
 [9]: https://github.com/features/actions
 [10]: https://github.com/EasyWebApp/Web-polyfill

@@ -77,6 +77,16 @@ export class AbortController extends Polyfill {
     };
 }
 
+export class Lock extends Polyfill {
+    packageName = 'navigator.locks';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return window.LockManager instanceof Function;
+    };
+}
+
 export class Clipboard extends Polyfill {
     packageName = 'clipboard-polyfill';
 
@@ -89,6 +99,23 @@ export class Clipboard extends Polyfill {
     }
     detect = function () {
         return !!window.Clipboard;
+    };
+}
+
+export class EyeDropper extends Polyfill {
+    packageName = 'eyedropper-polyfill';
+
+    dependencies = [new ECMAScript6()];
+
+    get packageURLs() {
+        return [
+            `${this.mirrorBase}html2canvas/dist/html2canvas.js`,
+            `${this.packageBase}/dist/eyedropper-polyfill.umd.js`
+        ];
+    }
+
+    detect = function () {
+        return window['EyeDropper'] instanceof Function;
     };
 }
 
@@ -117,6 +144,22 @@ export class WakeLock extends Polyfill {
 
     detect = function () {
         return navigator.wakeLock instanceof Object;
+    };
+}
+
+export class IndexedDB extends Polyfill {
+    packageName = 'indexeddbshim';
+
+    dependencies = [new ECMAScript6()];
+
+    get packageURLs() {
+        return [
+            `${this.packageBase}/dist/indexeddbshim-UnicodeIdentifiers.min.js`
+        ];
+    }
+
+    detect = function () {
+        return window.indexedDB instanceof Function;
     };
 }
 

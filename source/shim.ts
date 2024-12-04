@@ -1,22 +1,7 @@
-import { Window } from 'happy-dom';
+import 'dom-renderer/source/polyfill';
 import { ProxyAgent, setGlobalDispatcher } from 'undici';
 
-const window = new Window();
-
-for (const key of [
-    'window',
-    'XMLSerializer',
-    'DOMParser',
-    'NodeFilter',
-    'Text',
-    'Document',
-    'document',
-    'ShadowRoot',
-    'Element',
-    'HTMLElement',
-    'HTMLUnknownElement'
-])
-    Reflect.set(globalThis, key, Reflect.get(window, key));
+globalThis.self = globalThis.window;
 
 const { HTTP_PROXY } = process.env;
 
