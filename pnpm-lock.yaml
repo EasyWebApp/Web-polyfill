@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  marked: ^15.0.0
+  marked: ^15.0.3
   '@tech_query/node-toolkit': ^2.0.0-alpha.0
 
 importers:
@@ -14,53 +14,53 @@ importers:
     dependencies:
       '@tech_query/node-toolkit':
         specifier: ^2.0.0-alpha.0
-        version: 2.0.0-alpha.0(@types/node@20.17.6)
+        version: 2.0.0-alpha.0(@types/node@20.17.9)
       dom-renderer:
-        specifier: ^2.5.1
-        version: 2.5.1(happy-dom@15.11.6)(typescript@5.6.3)
+        specifier: ^2.6.1
+        version: 2.6.1(happy-dom@15.11.7)(typescript@5.7.2)
       dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
+        specifier: ^16.4.7
+        version: 16.4.7
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
       happy-dom:
-        specifier: ^15.11.6
-        version: 15.11.6
+        specifier: ^15.11.7
+        version: 15.11.7
       koapache:
         specifier: ^2.2.2
-        version: 2.2.2(@types/node@20.17.6)
+        version: 2.2.2(@types/node@20.17.9)
       marked:
-        specifier: ^15.0.0
-        version: 15.0.0
+        specifier: ^15.0.3
+        version: 15.0.3
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
       undici:
-        specifier: ^6.21.0
-        version: 6.21.0
+        specifier: ^7.1.0
+        version: 7.1.0
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
       '@types/node':
-        specifier: ^20.17.6
-        version: 20.17.6
+        specifier: ^20.17.9
+        version: 20.17.9
       husky:
-        specifier: ^9.1.6
-        version: 9.1.6
+        specifier: ^9.1.7
+        version: 9.1.7
       lint-staged:
         specifier: ^15.2.10
         version: 15.2.10
       prettier:
-        specifier: ^3.3.3
-        version: 3.3.3
+        specifier: ^3.4.2
+        version: 3.4.2
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
       typescript:
-        specifier: ~5.6.3
-        version: 5.6.3
+        specifier: ~5.7.2
+        version: 5.7.2
 
 packages:
 
@@ -364,8 +364,8 @@ packages:
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
 
-  '@types/node@20.17.6':
-    resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
+  '@types/node@20.17.9':
+    resolution: {integrity: sha512-0JOXkRyLanfGPE2QRCwgxhzlBAvaRdCNMcvbd7jFfpmD4eEXll7LRwy5ymJmyeZqk7Nh7eD2LeUyQ68BbndmXw==}
 
   '@types/qs@6.9.17':
     resolution: {integrity: sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==}
@@ -551,13 +551,13 @@ packages:
   dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
 
-  dom-renderer@2.5.1:
-    resolution: {integrity: sha512-mntEbHrE1FtS7ZLgCVhR3BBwdJonguNhHtFr7NlAbBK8bVwxptqDbFypdxmsCrctz9YAmeHzlCoBwpM4q1dYdw==}
+  dom-renderer@2.6.1:
+    resolution: {integrity: sha512-8nZ/tnW2U460ZZOUEzuF5HV8MK1m2JkgklI9b0UnOZvKlkNxdbZ48TweY7s1UikDpQ3E4aqjx55ir8dEFjY/LQ==}
     peerDependencies:
       happy-dom: ^14
 
-  dotenv@16.4.5:
-    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   ee-first@1.1.1:
@@ -683,8 +683,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@15.11.6:
-    resolution: {integrity: sha512-elX7iUTu+5+3b2+NGQc0L3eWyq9jKhuJJ4GpOMxxT/c2pg9O3L5H3ty2VECX0XXZgRmmRqXyOK8brA2hDI6LsQ==}
+  happy-dom@15.11.7:
+    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
     engines: {node: '>=18.0.0'}
 
   has-flag@3.0.0:
@@ -741,8 +741,8 @@ packages:
   humanize-number@0.0.2:
     resolution: {integrity: sha512-un3ZAcNQGI7RzaWGZzQDH47HETM4Wrj6z6E4TId8Yeq9w5ZKUVB1nrT2jwFheTUjEmqcgTjXDc959jum+ai1kQ==}
 
-  husky@9.1.6:
-    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
+  husky@9.1.7:
+    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -889,10 +889,10 @@ packages:
   marked-highlight@2.2.1:
     resolution: {integrity: sha512-SiCIeEiQbs9TxGwle9/OwbOejHCZsohQRaNTY2u8euEXYt2rYUFoiImUirThU3Gd/o6Q1gHGtH9qloHlbJpNIA==}
     peerDependencies:
-      marked: ^15.0.0
+      marked: ^15.0.3
 
-  marked@15.0.0:
-    resolution: {integrity: sha512-0mouKmBROJv/WSHJBPZZyYofUgawMChnD5je/g+aOBXsHDjb/IsnTQj7mnhQZu+qPJmRQ0ecX3mLGEUm3BgwYA==}
+  marked@15.0.3:
+    resolution: {integrity: sha512-Ai0cepvl2NHnTcO9jYDtcOEtVBNVYR31XnEA3BndO7f5As1wzpcOceSUM8FDkNLJNIODcLpDTWay/qQhqbuMvg==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -1032,8 +1032,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+  prettier@3.4.2:
+    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1079,6 +1079,9 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  scheduler-polyfill@1.3.0:
+    resolution: {integrity: sha512-bIjhi/KJqo08wrq+K2rlB6HNPh871KgREPpVti4zv0mSY1dCi3qr0rRCw+SGHc8/gtKceev29sN//lf6KiYa/g==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -1188,8 +1191,8 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.6.3:
-    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1201,9 +1204,9 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
-  undici@6.21.0:
-    resolution: {integrity: sha512-BUgJXc752Kou3oOIuU1i+yZZypyZRqNPW0vqoMPl8VaoalSfeR0D8/t4iAS3yirs79SSMTxTag+ZC86uswv+Cw==}
-    engines: {node: '>=18.17'}
+  undici@7.1.0:
+    resolution: {integrity: sha512-3+mdX2R31khuLCm2mKExSlMdJsfol7bJkIMH80tdXA74W34rT1jKemUTlYR7WY3TqsV4wfOgpatWmmB2Jl1+5g==}
+    engines: {node: '>=20.18.1'}
 
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -1479,15 +1482,15 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tech_query/node-toolkit@2.0.0-alpha.0(@types/node@20.17.6)':
+  '@tech_query/node-toolkit@2.0.0-alpha.0(@types/node@20.17.9)':
     dependencies:
       '@babel/core': 7.26.0
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
       cross-spawn: 7.0.5
       file-type: 16.5.4
       fs-extra: 11.2.0
-      marked: 15.0.0
-      marked-highlight: 2.2.1(marked@15.0.0)
+      marked: 15.0.3
+      marked-highlight: 2.2.1(marked@15.0.3)
       mime: 3.0.0
       prettier: 2.8.8
       prismjs: 1.29.0
@@ -1500,21 +1503,21 @@ snapshots:
 
   '@types/accepts@1.3.7':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/co-body@6.1.3':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
       '@types/qs': 6.9.17
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/content-disposition@0.5.8': {}
 
@@ -1523,11 +1526,11 @@ snapshots:
       '@types/connect': 3.4.38
       '@types/express': 5.0.0
       '@types/keygrip': 1.0.6
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/express-serve-static-core@5.0.1':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
       '@types/qs': 6.9.17
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -1541,12 +1544,12 @@ snapshots:
 
   '@types/formidable@2.0.6':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/http-assert@1.5.6': {}
 
@@ -1554,7 +1557,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/keygrip@1.0.6': {}
 
@@ -1571,11 +1574,11 @@ snapshots:
       '@types/http-errors': 2.0.4
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/mime@1.3.5': {}
 
-  '@types/node@20.17.6':
+  '@types/node@20.17.9':
     dependencies:
       undici-types: 6.19.8
 
@@ -1586,12 +1589,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.17.6
+      '@types/node': 20.17.9
       '@types/send': 0.17.4
 
   accepts@1.3.8:
@@ -1682,9 +1685,9 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commander-jsx@0.6.9(@types/node@20.17.6):
+  commander-jsx@0.6.9(@types/node@20.17.9):
     dependencies:
-      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.6)
+      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.9)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@babel/plugin-transform-modules-commonjs'
@@ -1721,9 +1724,9 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  declarative-shadow-dom-polyfill@0.4.0(typescript@5.6.3):
+  declarative-shadow-dom-polyfill@0.4.0(typescript@5.7.2):
     dependencies:
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   deep-equal@1.0.1: {}
 
@@ -1754,17 +1757,18 @@ snapshots:
       asap: 2.0.6
       wrappy: 1.0.2
 
-  dom-renderer@2.5.1(happy-dom@15.11.6)(typescript@5.6.3):
+  dom-renderer@2.6.1(happy-dom@15.11.7)(typescript@5.7.2):
     dependencies:
-      declarative-shadow-dom-polyfill: 0.4.0(typescript@5.6.3)
-      happy-dom: 15.11.6
+      declarative-shadow-dom-polyfill: 0.4.0(typescript@5.7.2)
+      happy-dom: 15.11.7
+      scheduler-polyfill: 1.3.0
       tslib: 2.8.1
       web-streams-polyfill: 4.0.0
-      web-utility: 4.4.2(typescript@5.6.3)
+      web-utility: 4.4.2(typescript@5.7.2)
     transitivePeerDependencies:
       - typescript
 
-  dotenv@16.4.5: {}
+  dotenv@16.4.7: {}
 
   ee-first@1.1.1: {}
 
@@ -1909,7 +1913,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@15.11.6:
+  happy-dom@15.11.7:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -1969,7 +1973,7 @@ snapshots:
 
   humanize-number@0.0.2: {}
 
-  husky@9.1.6: {}
+  husky@9.1.7: {}
 
   iconv-lite@0.4.24:
     dependencies:
@@ -2104,11 +2108,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  koapache@2.2.2(@types/node@20.17.6):
+  koapache@2.2.2(@types/node@20.17.9):
     dependencies:
       '@koa/cors': 4.0.0
-      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.6)
-      commander-jsx: 0.6.9(@types/node@20.17.6)
+      '@tech_query/node-toolkit': 2.0.0-alpha.0(@types/node@20.17.9)
+      commander-jsx: 0.6.9(@types/node@20.17.9)
       form-data: 4.0.1
       internal-ip: 6.2.0
       koa: 2.15.3
@@ -2160,11 +2164,11 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  marked-highlight@2.2.1(marked@15.0.0):
+  marked-highlight@2.2.1(marked@15.0.3):
     dependencies:
-      marked: 15.0.0
+      marked: 15.0.3
 
-  marked@15.0.0: {}
+  marked@15.0.3: {}
 
   media-typer@0.3.0: {}
 
@@ -2263,7 +2267,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.3.3: {}
+  prettier@3.4.2: {}
 
   prismjs@1.29.0: {}
 
@@ -2307,6 +2311,8 @@ snapshots:
   safe-buffer@5.2.1: {}
 
   safer-buffer@2.1.2: {}
+
+  scheduler-polyfill@1.3.0: {}
 
   semver@6.3.1: {}
 
@@ -2410,13 +2416,13 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typescript@5.6.3: {}
+  typescript@5.7.2: {}
 
   uglify-js@3.19.3: {}
 
   undici-types@6.19.8: {}
 
-  undici@6.21.0: {}
+  undici@7.1.0: {}
 
   universalify@2.0.1: {}
 
@@ -2434,12 +2440,12 @@ snapshots:
 
   web-streams-polyfill@4.0.0: {}
 
-  web-utility@4.4.2(typescript@5.6.3):
+  web-utility@4.4.2(typescript@5.7.2):
     dependencies:
       '@swc/helpers': 0.5.15
       element-internals-polyfill: 1.3.12
       regenerator-runtime: 0.14.1
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   webidl-conversions@7.0.0: {}
 
