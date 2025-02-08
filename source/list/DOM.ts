@@ -111,16 +111,6 @@ export class DeclarativeShadowDOM extends Polyfill {
     };
 }
 
-export class AdoptedStyleSheets extends Polyfill {
-    packageName = 'construct-style-sheets-polyfill';
-
-    dependencies = [new ECMAScript6()];
-
-    detect = function () {
-        return 'adoptedStyleSheets' in document;
-    };
-}
-
 export class PointerEvents extends Polyfill {
     packageName = '@wessberg/pointer-events';
 
