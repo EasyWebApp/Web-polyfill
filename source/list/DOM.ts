@@ -98,6 +98,10 @@ export class WebComponents extends Polyfill {
 export class ElementInternals extends Polyfill {
     packageName = 'element-internals-polyfill';
 
+    get packageURLs() {
+        return [`${this.packageBase}@1.3.13/dist/index.js`];
+    }
+
     detect = function () {
         return window.ElementInternals instanceof Function;
     };

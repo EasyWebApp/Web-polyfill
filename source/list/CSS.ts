@@ -15,9 +15,7 @@ export class AnchorPosition extends Polyfill {
     packageName = '@oddbird/css-anchor-positioning';
 
     get packageURLs() {
-        const { packageBase } = this;
-
-        return [`${packageBase}/dist/css-anchor-positioning.umd.cjs`];
+        return [`${this.packageBase}/dist/css-anchor-positioning.umd.cjs`];
     }
 
     detect = function () {

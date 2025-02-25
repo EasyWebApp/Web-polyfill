@@ -33,9 +33,14 @@ jobs:
                   cname: polyfill.web-cell.dev
 
             - name: Deploy for China mainland
-              uses: bacongobbler/azure-blob-storage-upload@v3.0.0
+              uses: azure/CLI@v2
               with:
-                  source_dir: ./public
-                  container_name: $web
-                  connection_string: ${{ secrets.ConnectionString }}
-                  sync: 'true'
+                  azcliversion: 2.67.0
+                  inlineScript: |
+                      tdnf install -y azcopy;
+
+                      az storage blob sync \
+                        --container '$web' \
+                        --source ./public \
+                        --connection-string "${{ secrets.ConnectionString }}" \
+                        --delete-destination true
