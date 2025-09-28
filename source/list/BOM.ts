@@ -46,6 +46,16 @@ export class Stream extends Polyfill {
     };
 }
 
+export class CookieStore extends Polyfill {
+    packageName = 'cookie-store';
+
+    dependencies = [new ECMAScript6()];
+
+    detect = function () {
+        return 'cookieStore' in window && window.cookieStore instanceof Object;
+    };
+}
+
 export class Fetch extends Polyfill {
     packageName = 'whatwg-fetch';
 

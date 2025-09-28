@@ -38,9 +38,9 @@ self.importScripts('https://polyfill.web-cell.dev/feature/Regenerator.js');
 
 ### China mainland
 
-Thanks for [KaiYuanShe][13]'s donation, we get a fast local mirror for China mainland:
+Thanks for [fCC ChengDu community][13]'s donation, we get a fast local mirror for China mainland:
 
-> https://polyfill.kaiyuanshe.cn/
+> https://polyfill.web-conf.dev/
 
 ### Custom examples
 
@@ -65,7 +65,7 @@ LAN_HOST=https://polyfill.example.kp
 ## Inspired by
 
 1. https://polyfill.io/
-2. https://polyfiller.kaiyuanshe.cn/
+2. https://github.com/Open-Source-Bazaar/Polyfiller
 
 [1]: https://en.wikipedia.org/wiki/Content_delivery_network
 [2]: https://remysharp.com/2010/10/08/what-is-a-polyfill
@@ -79,4 +79,4 @@ LAN_HOST=https://polyfill.example.kp
 [10]: https://github.com/EasyWebApp/Web-polyfill
 [11]: https://github.com/EasyWebApp/Web-polyfill/blob/master/.github/workflows/main.yml#L31
 [12]: https://pages.github.com/
-[13]: https://kaiyuanshe.cn/
+[13]: https://fcc-cd.dev/

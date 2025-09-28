@@ -11,7 +11,7 @@ jobs:
 
             - uses: pnpm/action-setup@v4
               with:
-                  version: 9
+                  version: 10
 
             - uses: actions/setup-node@v4
               with:
@@ -31,16 +31,3 @@ jobs:
                   personal_token: ${{ secrets.GITHUB_TOKEN }}
                   force_orphan: true
                   cname: polyfill.web-cell.dev
-
-            - name: Deploy for China mainland
-              uses: azure/CLI@v2
-              with:
-                  azcliversion: 2.67.0
-                  inlineScript: |
-                      tdnf install -y azcopy;
-
-                      az storage blob sync \
-                        --container '$web' \
-                        --source ./public \
-                        --connection-string "${{ secrets.ConnectionString }}" \
-                        --delete-destination true
