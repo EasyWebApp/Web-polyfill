@@ -63,6 +63,18 @@ export class Detail extends Polyfill {
     };
 }
 
+export class Popover extends Polyfill {
+    packageName = '@oddbird/popover-polyfill';
+
+    get packageURLs() {
+        return [`${this.packageBase}/dist/popover.iife.min.js`];
+    }
+
+    detect = function () {
+        return 'showPopover' in window.HTMLElement.prototype;
+    };
+}
+
 export class Dialog extends Polyfill {
     packageName = 'dialog-polyfill';
 
@@ -122,15 +134,5 @@ export class PointerEvents extends Polyfill {
 
     detect = function () {
         return window.PointerEvent instanceof Function;
-    };
-}
-
-export class Popover extends Polyfill {
-    packageName = '@oddbird/popover-polyfill';
-
-    detect = function () {
-        return (
-            window.HTMLElement && 'showPopover' in window.HTMLElement.prototype
-        );
     };
 }
