@@ -124,3 +124,13 @@ export class PointerEvents extends Polyfill {
         return window.PointerEvent instanceof Function;
     };
 }
+
+export class Popover extends Polyfill {
+    packageName = '@oddbird/popover-polyfill';
+
+    detect = function () {
+        return (
+            window.HTMLElement && 'showPopover' in window.HTMLElement.prototype
+        );
+    };
+}
