@@ -91,6 +91,21 @@ export class Dialog extends Polyfill {
     };
 }
 
+/**
+ * @todo Should be updated after this issue is resolved: {@link https://github.com/AegisJSProject/sanitizer/issues/179}
+ */
+export class Sanitizer extends Polyfill {
+    packageName = '@aegisjsproject/sanitizer';
+
+    get packageURLs() {
+        return [`${this.packageBase}/polyfill.min.js`];
+    }
+
+    detect = function () {
+        return window['Sanitizer'] instanceof Function;
+    };
+}
+
 export class WebComponents extends Polyfill {
     packageName = '@webcomponents/webcomponentsjs';
 
