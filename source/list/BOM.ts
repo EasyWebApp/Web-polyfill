@@ -46,6 +46,16 @@ export class Stream extends Polyfill {
     };
 }
 
+export class CompressionStream extends Polyfill {
+    packageName = 'compression-streams-polyfill';
+
+    dependencies = [new Stream()];
+
+    detect = function () {
+        return window.CompressionStream instanceof Function;
+    };
+}
+
 export class CookieStore extends Polyfill {
     packageName = 'cookie-store';
 
@@ -119,8 +129,8 @@ export class EyeDropper extends Polyfill {
 
     get packageURLs() {
         return [
-            `${this.mirrorBase}html2canvas/dist/html2canvas.js`,
-            `${this.packageBase}/dist/eyedropper-polyfill.umd.js`
+            `${this.mirrorBase}html2canvas-pro/dist/html2canvas-pro.min.js`,
+            `${this.packageBase}/dist/eyedropper-polyfill.umd.cjs`
         ];
     }
 

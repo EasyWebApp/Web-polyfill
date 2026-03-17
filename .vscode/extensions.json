@@ -3,13 +3,12 @@
         "yzhang.markdown-all-in-one",
         "redhat.vscode-yaml",
         "akamud.vscode-caniuse",
-        "visualstudioexptteam.intellicode-api-usage-examples",
         "pflannery.vscode-versionlens",
         "christian-kohler.npm-intellisense",
         "esbenp.prettier-vscode",
         "eamodio.gitlens",
         "github.vscode-pull-request-github",
         "github.vscode-github-actions",
-        "GitHub.copilot"
+        "GitHub.copilot-chat"
     ]
 }
