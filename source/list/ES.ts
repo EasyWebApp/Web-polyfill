@@ -44,3 +44,11 @@ export class Regenerator extends Polyfill {
         return 'regeneratorRuntime' in window;
     };
 }
+
+export class Temporal extends Polyfill {
+    packageName = 'temporal-polyfill';
+
+    detect = function () {
+        return 'Temporal' in window && typeof window.Temporal === 'object';
+    };
+}
